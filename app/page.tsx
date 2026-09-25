@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { appStoreUrl, getContent, nextRide } from "@/lib/content";
+import { getE46 } from "@/lib/e46";
 import { getLocale } from "@/lib/locale";
 
 export default async function HomePage() {
   const locale = await getLocale();
   const c = getContent(locale);
+  const e46 = getE46(locale);
   const ride = nextRide?.[locale] ?? null;
 
   return (
@@ -133,15 +135,15 @@ export default async function HomePage() {
         <div className="shell e46-teaser">
           <div>
             <p className="eyebrow eyebrow--cyan">{c.e46Teaser.eyebrow}</p>
-            <h2 className="section__title display">{c.e46.name}</h2>
-            <p className="lede">{c.e46.lede}</p>
+            <h2 className="section__title display">{e46.name}</h2>
+            <p className="lede">{e46.tagline}</p>
             <Link href="/e46-garage" className="btn btn--cyan">
               {c.e46Teaser.cta}
             </Link>
           </div>
           <p className="e46-teaser__stamp e46-teaser__stamp--cyan display" aria-hidden="true">
             E46
-            <span>{c.e46.by}</span>
+            <span>{e46.subtitle}</span>
           </p>
         </div>
       </section>

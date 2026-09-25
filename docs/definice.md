@@ -31,12 +31,20 @@ je vedlejší efekt členství, ne důvod k instalaci.
 | Vrstva | Co to je | Cena | Role |
 |---|---|---|---|
 | **2am Drive Club** | značka, klub, komunita, web | zdarma (na přihlášku) | pozornost a důvěra |
-| **E46 Garage** | appka pro jednu generaci BMW | zdarma | akviziční magnet, vstup do ekosystému |
+| **E46 Garage** | desktopová appka (Windows) na diagnostiku/kódování/tuning E46 M54 (MS43) | zdarma, open source (GPLv3) | akviziční magnet, vstup do ekosystému |
 | **Torqly.ai** | garáž, deník jízd, kluby, pro všechna auta | předplatné | tržby |
 
 Logika: *free niche tool → komunita → placený obecný nástroj.* E46 Garage je
 v tomhle klíčový kus — komunita kolem E46 je globální, fanatická a hledá
 přesně tohle. Je to nejlevnější způsob, jak získat relevantní publikum.
+
+**Oprava 25. 9.:** E46 Garage jsem si původně špatně domyslel jako mobilní
+appku se servisní knihou. Realita podle zadání od Radka
+(`docs/e46-garage-zadani.md`): je to desktopová Windows appka nad
+EDIABAS/INPA na diagnostiku, kódování a tuning BMW E46 M54 (Siemens MS43),
+open source pod GPLv3, distribuovaná přes GitHub (účet `2amdriveclub`),
+podpora jen přes Buy Me a Coffee. Web na `/e46-garage` přepsán podle
+zadání — viz sekce ÚKOLY níž pro chybějící odkazy.
 
 ## 4. Pro koho
 
@@ -119,9 +127,10 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 |---|---|
 | Rozpor v pozicování Torqly: web říká *"Premium AI Diagnostic Platform"*, App Store *"Domov pro celý život auta"*. Jedno musí zmizet. | Radek |
 | Pět cenových hladin pro produkt s ~0 uživateli. Návrh: seříznout na dvě, dokud nejsou data. | Radek |
-| E46 Garage: platforma, odkaz ke stažení, jazyk (E46 komunita je hlavně anglicky mluvící). | Radek |
+| E46 Garage: odkaz na GitHub repo/Releases a na Buy Me a Coffee — zatím `null` v `lib/e46.ts`, web poctivě ukazuje "brzy". | Radek |
+| E46 Garage: je anglická verze stránky OK jako výchozí (appka samotná je jen česky), nebo má zůstat jen česky bez ohledu na doménu? | Radek |
 | Jestli je Torqly společná firemní věc, nebo Radkova samostatná — a co na tom dělají Bohuslav a Adam. | všichni tři |
-| Doména: `2amdriveclub.cz` vs `.club` vs `.com` (na `.com` sedí americká kapela a bar stejného jména). | Radek |
+| Doména: `.com` koupena (přesný název zatím nemám), `.cz` k potvrzení. Web už jazyk podle domény rozlišuje (`.cz` → čeština, jinak angličtina). | Radek |
 | Hero Car sloty: cena a počet aut na jízdu (na webu zatím bez konkrétní ceny — "piš na e-mail"). | Radek |
 | Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
 
@@ -139,8 +148,8 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 
 | # | Úkol | Kdo | Termín |
 |---|---|---|---|
-| 1 | Dodat odkaz ke stažení E46 Garage + na jaké platformě běží | Radek | do spuštění webu |
-| 2 | Rozhodnout doménu a nasměrovat DNS na Vercel | Radek | — |
+| 1 | Zveřejnit GitHub repo E46 Garage a dodat odkaz (GitHub + Releases) + Buy Me a Coffee | Radek | do spuštění webu |
+| 2 | Dodat přesný název `.com` domény a potvrdit `.cz`, napojit na Vercel | Radek | — |
 | 3 | Sjednotit pozicování Torqly (web vs App Store) | Radek | — |
 | 4 | Dodat 6–10 fotek z jízd do galerie | Bohuslav / Adam | — |
 | 5 | Vypsat termín první jízdy | tým | — |

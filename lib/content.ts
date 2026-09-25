@@ -186,29 +186,6 @@ export const content = {
         body: "Přihlášku jsme dostali. Projdeme ji a ozveme se do sedmi dnů — ať už to dopadne jakkoli. Mezitím si stáhni Torqly, ušetříš si to potom.",
       },
     },
-    e46: {
-      name: "E46 Garage",
-      by: "by 2am Drive Club",
-      claim: "Všechno o tvé E46 na jednom místě. Zdarma.",
-      lede: "Servisní historie, díly, kódy poruch a technika ke konkrétní generaci. Postavené pro jedno auto, ne pro všechna — proto to sedí.",
-      price: "Zdarma, bez účtu, bez reklam",
-      soonPrefix: "Odkaz ke stažení sem doplníme, jakmile bude build venku.",
-      soonLink: "Přihlas se do klubu",
-      soonSuffix: "a dozvíš se to první.",
-      featuresHeading: { eyebrow: "Co to umí", title: "Jedno auto, pořádně" },
-      features: [
-        "Servisní kniha — co se kdy dělalo a za kolik",
-        "Katalogová čísla dílů, která si nikdo nepamatuje",
-        "Chybové kódy a co reálně znamenají",
-        "Technická data ke konkrétní verzi motoru",
-      ],
-      otherCar: {
-        eyebrow: "A když máš i jiné auto",
-        titleLines: ["Torqly umí", "celou garáž"],
-        body: "je zdarma a dělá jednu věc pro jedno auto. Když chceš deník jízd, garáž podle VIN a klubové srazy pro cokoli, co máš na dvoře, je na to Torqly.",
-        cta: "Torqly v App Store",
-      },
-    },
     footer: {
       clubHeading: "Klub",
       contactHeading: "Kontakt",
@@ -395,29 +372,6 @@ export const content = {
         body: "We have your application. We'll review it and get back to you within seven days, either way. In the meantime, grab Torqly — saves you a step later.",
       },
     },
-    e46: {
-      name: "E46 Garage",
-      by: "by 2am Drive Club",
-      claim: "Everything about your E46, in one place. Free.",
-      lede: "Service history, parts, fault codes and specs for one generation. Built for one car, not all of them — that's why it works.",
-      price: "Free, no account, no ads",
-      soonPrefix: "We'll add the download link here as soon as the build is out.",
-      soonLink: "Apply to the club",
-      soonSuffix: "and you'll be first to know.",
-      featuresHeading: { eyebrow: "What it does", title: "One car, done right" },
-      features: [
-        "Service book — what was done, when, and for how much",
-        "Part numbers nobody ever remembers",
-        "Fault codes and what they actually mean",
-        "Spec data for your exact engine variant",
-      ],
-      otherCar: {
-        eyebrow: "Got another car too?",
-        titleLines: ["Torqly covers", "the whole garage"],
-        body: "is free and does one thing for one car. Want a ride log, a VIN-based garage and club meetups for whatever else is in your driveway — that's Torqly.",
-        cta: "Torqly on the App Store",
-      },
-    },
     footer: {
       clubHeading: "Club",
       contactHeading: "Contact",
@@ -446,13 +400,6 @@ export const nextRide: Record<
   cs: { dateLabel: "2. října 2026", timeLabel: "01:00", region: "Plzeňský kraj" },
   en: { dateLabel: "October 2, 2026", timeLabel: "01:00", region: "Pilsen Region" },
 };
-
-/**
- * E46 GARAGE — odkazy ke stažení. Sdílené pro obě jazykové verze (appka
- * sama zatím taky nemá language switch). Dokud zůstane prázdné, obě verze
- * webu poctivě řeknou "připravujeme" místo toho, aby vedly nikam.
- */
-export const e46Downloads: { label: string; href: string; note?: string }[] = [];
 
 export function getContent(locale: Locale): Content {
   return content[locale];
