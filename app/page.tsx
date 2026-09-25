@@ -1,29 +1,32 @@
 import Link from "next/link";
-import { e46, faq, nextRide, pillars, site, steps } from "@/lib/site";
+import { appStoreUrl, getContent, nextRide } from "@/lib/content";
+import { getLocale } from "@/lib/locale";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getLocale();
+  const c = getContent(locale);
+  const ride = nextRide?.[locale] ?? null;
+
   return (
     <>
       {/* --- hero ------------------------------------------------------- */}
       <section className="hero">
         <div className="shell hero__inner">
-          <p className="eyebrow">{site.country} · noční jízdy · vstup na přihlášku</p>
-          <h1 className="hero__title display">
-            <span>Jezdíme,</span>
-            <span>když ostatní</span>
-            <span className="hero__title--accent">spí.</span>
-          </h1>
-          <p className="lede hero__lede">
-            Ve dvě ráno je město prázdné. Žádné fronty, žádná světla v zrcátku,
-            žádné publikum. Zůstanou jen auta a lidi, kteří je mají rádi natolik,
-            že kvůli nim nespí.
+          <p className="eyebrow">
+            {c.site.country} · {c.hero.eyebrow}
           </p>
+          <h1 className="hero__title display">
+            <span>{c.hero.titleLines[0]}</span>
+            <span>{c.hero.titleLines[1]}</span>
+            <span className="hero__title--accent">{c.hero.titleAccent}</span>
+          </h1>
+          <p className="lede hero__lede">{c.hero.lede}</p>
           <div className="hero__actions">
             <Link href="/prihlaska" className="btn">
-              Podat přihlášku
+              {c.hero.ctaApply}
             </Link>
             <a href="#klub" className="btn btn--ghost">
-              Co je to za klub
+              {c.hero.ctaAbout}
             </a>
           </div>
         </div>
@@ -31,7 +34,7 @@ export default function HomePage() {
           <div className="hero__ticker-track">
             {Array.from({ length: 4 }).map((_, i) => (
               <span key={i}>
-                2AM DRIVE CLUB · NIGHT RUNS · {site.country.toUpperCase()} ·
+                2AM DRIVE CLUB · {c.hero.ticker} · {c.site.country.toUpperCase()} ·
               </span>
             ))}
           </div>
@@ -39,13 +42,13 @@ export default function HomePage() {
       </section>
 
       {/* --- nejbližší jízda --------------------------------------------- */}
-      {nextRide && (
+      {ride && (
         <section className="section section--flush">
           <div className="shell">
             <Link href="/jizdy" className="ride-strip">
-              <span className="ride-strip__label">Nejbližší jízda</span>
+              <span className="ride-strip__label">{c.rideStrip.label}</span>
               <span className="ride-strip__date display">
-                {nextRide.dateLabel} · {nextRide.timeLabel} · {nextRide.region}
+                {ride.dateLabel} · {ride.timeLabel} · {ride.region}
               </span>
               <span className="ride-strip__arrow" aria-hidden="true">
                 →
@@ -58,22 +61,11 @@ export default function HomePage() {
       {/* --- manifest --------------------------------------------------- */}
       <section className="section" id="manifest">
         <div className="shell manifest">
-          <p className="eyebrow">Manifest</p>
+          <p className="eyebrow">{c.manifest.eyebrow}</p>
           <div className="manifest__body">
-            <p className="manifest__lead">
-              Tohle není sraz na parkovišti u nákupáku. Není to soutěž o to, kdo
-              má dražší auto, ani spolek, kde se dvě hodiny stojí a povídá.
-            </p>
-            <p>
-              Je to klub lidí, pro které je jízda samotná ten důvod. Sejdeme se,
-              když je silnice prázdná, ujedeme trasu, kterou někdo vymyslel,
-              a ráno máme něco, co ostatní nemají — a fotky, na které se dá dívat
-              i za deset let.
-            </p>
-            <p>
-              Vstup je na přihlášku. Ne proto, že bychom dělali drahoty. Protože
-              klub, kam může kdokoli, není klub.
-            </p>
+            <p className="manifest__lead">{c.manifest.lead}</p>
+            <p>{c.manifest.p1}</p>
+            <p>{c.manifest.p2}</p>
           </div>
         </div>
       </section>
@@ -81,10 +73,10 @@ export default function HomePage() {
       {/* --- pilíře ----------------------------------------------------- */}
       <section className="section" id="klub">
         <div className="shell">
-          <p className="eyebrow">Co členství dává</p>
-          <h2 className="section__title display">Tři věci, žádná čtvrtá</h2>
+          <p className="eyebrow">{c.pillarsHeading.eyebrow}</p>
+          <h2 className="section__title display">{c.pillarsHeading.title}</h2>
           <ul className="pillars">
-            {pillars.map((p) => (
+            {c.pillars.map((p) => (
               <li key={p.index} className="pillar">
                 <span className="pillar__index display">{p.index}</span>
                 <h3 className="pillar__title display">{p.title}</h3>
@@ -98,10 +90,10 @@ export default function HomePage() {
       {/* --- jak se dostat dovnitř -------------------------------------- */}
       <section className="section" id="jak">
         <div className="shell">
-          <p className="eyebrow">Jak se dostat dovnitř</p>
-          <h2 className="section__title display">Tři kroky, sedm dní</h2>
+          <p className="eyebrow">{c.stepsHeading.eyebrow}</p>
+          <h2 className="section__title display">{c.stepsHeading.title}</h2>
           <ol className="steps">
-            {steps.map((s) => (
+            {c.steps.map((s) => (
               <li key={s.index} className="step">
                 <span className="step__index display">{s.index}</span>
                 <div>
@@ -112,7 +104,7 @@ export default function HomePage() {
             ))}
           </ol>
           <Link href="/prihlaska" className="btn">
-            Začít přihláškou
+            {c.hero.ctaApply}
           </Link>
         </div>
       </section>
@@ -121,31 +113,17 @@ export default function HomePage() {
       <section className="section" id="aplikace">
         <div className="shell app-strip">
           <div>
-            <p className="eyebrow">Klub běží v aplikaci</p>
-            <h2 className="section__title display">
-              Torqly drží
-              <br />
-              celý život tvého auta
-            </h2>
-            <p>
-              Termíny jízd, trasy, evidence kilometrů, garáž s technikou podle
-              VIN. Klub není skupina na sociální síti, kde se za měsíc nedá nic
-              dohledat — všechno má jedno místo a zůstává to tam.
-            </p>
-            <a
-              href={site.appStoreUrl}
-              className="btn btn--ghost"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              Stáhnout Torqly
+            <p className="eyebrow eyebrow--cyan">{c.torqly.eyebrow}</p>
+            <h2 className="section__title display">{c.torqly.title}</h2>
+            <p>{c.torqly.body}</p>
+            <a href={appStoreUrl} className="btn btn--ghost btn--cyan" rel="noreferrer noopener" target="_blank">
+              {c.torqly.cta}
             </a>
           </div>
-          <ul className="app-strip__list">
-            <li>Deník jízd s mapou</li>
-            <li>Garáž a technika podle VIN</li>
-            <li>Termíny a sraz klubu</li>
-            <li>Záznam výkonu na uzavřené trati</li>
+          <ul className="app-strip__list app-strip__list--cyan">
+            {c.torqly.list.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
       </section>
@@ -154,16 +132,16 @@ export default function HomePage() {
       <section className="section" id="e46">
         <div className="shell e46-teaser">
           <div>
-            <p className="eyebrow">Zdarma ke stažení</p>
-            <h2 className="section__title display">{e46.name}</h2>
-            <p className="lede">{e46.lede}</p>
-            <Link href="/e46-garage" className="btn">
-              Stáhnout zdarma
+            <p className="eyebrow eyebrow--cyan">{c.e46Teaser.eyebrow}</p>
+            <h2 className="section__title display">{c.e46.name}</h2>
+            <p className="lede">{c.e46.lede}</p>
+            <Link href="/e46-garage" className="btn btn--cyan">
+              {c.e46Teaser.cta}
             </Link>
           </div>
-          <p className="e46-teaser__stamp display" aria-hidden="true">
+          <p className="e46-teaser__stamp e46-teaser__stamp--cyan display" aria-hidden="true">
             E46
-            <span>{e46.by}</span>
+            <span>{c.e46.by}</span>
           </p>
         </div>
       </section>
@@ -171,12 +149,9 @@ export default function HomePage() {
       {/* --- galerie ---------------------------------------------------- */}
       <section className="section" id="galerie">
         <div className="shell">
-          <p className="eyebrow">Z jízd</p>
-          <h2 className="section__title display">Ráno máš fotky</h2>
-          <p className="lede">
-            Fotky z každé jízdy dostanou členové do týdne. Tohle je jediná část
-            klubu, která je veřejná — protože funguje líp než jakýkoli text.
-          </p>
+          <p className="eyebrow">{c.gallery.eyebrow}</p>
+          <h2 className="section__title display">{c.gallery.title}</h2>
+          <p className="lede">{c.gallery.lede}</p>
           <div className="gallery" role="list">
             {Array.from({ length: 6 }).map((_, i) => (
               <figure className="gallery__item" role="listitem" key={i}>
@@ -191,10 +166,10 @@ export default function HomePage() {
       {/* --- faq -------------------------------------------------------- */}
       <section className="section" id="faq">
         <div className="shell">
-          <p className="eyebrow">Otázky</p>
-          <h2 className="section__title display">Než se zeptáš</h2>
+          <p className="eyebrow">{c.faqHeading.eyebrow}</p>
+          <h2 className="section__title display">{c.faqHeading.title}</h2>
           <div className="faq">
-            {faq.map((item) => (
+            {c.faq.map((item) => (
               <details className="faq__item" key={item.q}>
                 <summary>{item.q}</summary>
                 <p>{item.a}</p>
@@ -208,31 +183,18 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="shell cta">
           <h2 className="cta__title display">
-            {nextRide ? (
-              <>
-                Příští jízda
-                <br />
-                {nextRide.dateLabel}
-              </>
-            ) : (
-              <>
-                Příští jízda
-                <br />
-                je za pár týdnů
-              </>
-            )}
+            {c.finalCta.titlePrefix}
+            <br />
+            {ride ? ride.dateLabel : c.finalCta.titleFallback}
           </h2>
-          <p className="lede">
-            Skupina je malá schválně. Když se přihlásíš teď, jsi u toho od
-            začátku — a začátek se zopakovat nedá.
-          </p>
+          <p className="lede">{c.finalCta.lede}</p>
           <div className="hero__actions">
             <Link href="/prihlaska" className="btn">
-              Podat přihlášku
+              {c.finalCta.apply}
             </Link>
-            {nextRide && (
+            {ride && (
               <Link href="/jizdy" className="btn btn--ghost">
-                Jak jízdy fungují
+                {c.finalCta.howRidesWork}
               </Link>
             )}
           </div>

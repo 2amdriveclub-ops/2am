@@ -16,8 +16,9 @@
   --chalk-300: #b9b7b2;
   --chalk-500: #7d7b77;
 
-  --sodium: #ffab2e; /* sodíková lampa / blinkr */
+  --sodium: #ffab2e; /* sodíková lampa / blinkr — hlavní barva klubu */
   --beam: #eaf2ff;   /* světlomet */
+  --cyan: #2dd4ee;   /* palubní displej — vyhrazeno pro digitální produkty (Torqly, E46 Garage) */
 
   --bg: var(--asphalt-050);
   --bg-raised: var(--asphalt-100);
@@ -787,3 +788,15 @@ img { max-width: 100%; display: block; }
   color: var(--accent);
   margin: 0 0 16px;
 }
+
+/* --- cyan accent — vyhrazeno pro digitální produkty (Torqly, E46 Garage) - */
+
+.eyebrow--cyan { color: var(--cyan); }
+.eyebrow--cyan::before { background: var(--cyan); }
+
+.btn--cyan.btn--ghost:hover { background: transparent; border-color: var(--cyan); color: var(--cyan); }
+.btn--cyan:not(.btn--ghost):hover { background: var(--cyan); border-color: var(--cyan); }
+
+.app-strip__list--cyan li::before { background: var(--cyan); }
+
+.e46-teaser__stamp--cyan { -webkit-text-stroke-color: var(--cyan); }

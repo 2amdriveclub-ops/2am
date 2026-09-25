@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
 import { ApplicationForm } from "@/components/ApplicationForm";
-import { steps } from "@/lib/site";
+import { getContent } from "@/lib/content";
+import { getLocale } from "@/lib/locale";
 
-export const metadata: Metadata = {
-  title: "Přihláška do klubu",
-  description:
-    "Podej přihlášku do 2AM Drive Clubu. Ozveme se do sedmi dnů, ať už to dopadne jakkoli.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const c = getContent(await getLocale());
+  return c.apply.meta;
+}
 
-export default function ApplicationPage() {
+export default async function ApplicationPage() {
+  const locale = await getLocale();
+  const c = getContent(locale);
+
   return (
     <section className="section section--flush">
       <div className="shell apply">
         <div className="apply__intro">
-          <p className="eyebrow">Přihláška</p>
+          <p className="eyebrow">{c.apply.eyebrow}</p>
           <h1 className="apply__title display">
-            Řekni nám,
+            {c.apply.titleLines[0]}
             <br />
-            čím jezdíš
+            {c.apply.titleLines[1]}
           </h1>
-          <p className="lede">
-            Tři minuty. Nezajímá nás výkon ani cena — zajímá nás, jestli k tomu
-            autu máš vztah a jestli tě baví jezdit v noci.
-          </p>
+          <p className="lede">{c.apply.lede}</p>
           <ol className="apply__steps">
-            {steps.map((s) => (
+            {c.steps.map((s) => (
               <li key={s.index}>
                 <span className="display">{s.index}</span> {s.title}
               </li>
@@ -32,7 +32,7 @@ export default function ApplicationPage() {
           </ol>
         </div>
         <div className="apply__form">
-          <ApplicationForm />
+          <ApplicationForm locale={locale} content={c.apply} />
         </div>
       </div>
     </section>

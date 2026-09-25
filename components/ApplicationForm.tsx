@@ -1,19 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import type { Content } from "@/lib/content";
+import type { Locale } from "@/lib/locale";
 
 type Errors = Record<string, string>;
+type ApplyContent = Content["apply"];
 
-const FIELDS = [
-  { name: "name", label: "Jméno a příjmení", type: "text", required: true, autoComplete: "name" },
-  { name: "email", label: "E-mail", type: "email", required: true, autoComplete: "email" },
-  { name: "phone", label: "Telefon", type: "tel", required: false, autoComplete: "tel", hint: "Nepovinné. Použijeme jen k domluvě před jízdou." },
-  { name: "city", label: "Odkud jezdíš", type: "text", required: false, autoComplete: "address-level2" },
-  { name: "car", label: "Čím jezdíš", type: "text", required: true, hint: "Značka, model, rok. Klidně i to, co na něm máš rozdělané." },
-  { name: "instagram", label: "Instagram", type: "text", required: false, hint: "Nepovinné, ale pomůže nám to." },
-] as const;
+function fields(t: ApplyContent) {
+  return [
+    { name: "name", label: t.fields.name.label, type: "text", required: true, autoComplete: "name" },
+    { name: "email", label: t.fields.email.label, type: "email", required: true, autoComplete: "email" },
+    { name: "phone", label: t.fields.phone.label, type: "tel", required: false, autoComplete: "tel", hint: t.fields.phone.hint },
+    { name: "city", label: t.fields.city.label, type: "text", required: false, autoComplete: "address-level2" },
+    { name: "car", label: t.fields.car.label, type: "text", required: true, hint: t.fields.car.hint },
+    { name: "instagram", label: t.fields.instagram.label, type: "text", required: false, hint: t.fields.instagram.hint },
+  ] as const;
+}
 
-export function ApplicationForm() {
+export function ApplicationForm({ locale, content: t }: { locale: Locale; content: ApplyContent }) {
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [errors, setErrors] = useState<Errors>({});
   const [message, setMessage] = useState<string | null>(null);
@@ -29,7 +34,7 @@ export function ApplicationForm() {
     try {
       const response = await fetch("/api/prihlaska", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Locale": locale },
         body: JSON.stringify(payload),
       });
       const result = await response.json();
@@ -41,32 +46,29 @@ export function ApplicationForm() {
 
       setState("idle");
       if (result.errors) setErrors(result.errors as Errors);
-      setMessage(result.error ?? "Zkontroluj prosím vyplněná pole.");
+      setMessage(result.error ?? t.genericError);
     } catch {
       setState("idle");
-      setMessage("Nepodařilo se odeslat. Zkus to prosím ještě jednou.");
+      setMessage(t.networkError);
     }
   }
 
   if (state === "done") {
     return (
       <div className="form__done" role="status">
-        <h2 className="display">Máme to.</h2>
-        <p>
-          Přihlášku jsme dostali. Projdeme ji a ozveme se do sedmi dnů — ať už to
-          dopadne jakkoli. Mezitím si stáhni Torqly, ušetříš si to potom.
-        </p>
+        <h2 className="display">{t.done.title}</h2>
+        <p>{t.done.body}</p>
       </div>
     );
   }
 
   return (
     <form className="form" onSubmit={onSubmit} noValidate>
-      {FIELDS.map((field) => (
+      {fields(t).map((field) => (
         <p className="field" key={field.name}>
           <label htmlFor={field.name}>
             {field.label}
-            {!field.required && <span className="field__opt"> — nepovinné</span>}
+            {!field.required && <span className="field__opt"> — {t.fields.optional}</span>}
           </label>
           <input
             id={field.name}
@@ -87,7 +89,7 @@ export function ApplicationForm() {
       ))}
 
       <p className="field">
-        <label htmlFor="motivation">Proč chceš dovnitř</label>
+        <label htmlFor="motivation">{t.fields.motivation.label}</label>
         <textarea
           id="motivation"
           name="motivation"
@@ -96,9 +98,7 @@ export function ApplicationForm() {
           aria-invalid={Boolean(errors.motivation)}
           aria-describedby={errors.motivation ? "motivation-err" : undefined}
         />
-        <span className="field__hint">
-          Nemusí to být esej. Zajímá nás, co tě na tom baví.
-        </span>
+        <span className="field__hint">{t.fields.motivation.hint}</span>
         {errors.motivation && (
           <span className="field__err" id="motivation-err">
             {errors.motivation}
@@ -113,9 +113,7 @@ export function ApplicationForm() {
       </p>
 
       <p className="form__legal">
-        Odesláním nám dáváš svoje údaje k posouzení přihlášky a k domluvě jízd.
-        Nikomu je nepředáváme a na požádání je smažeme —{" "}
-        <a href="mailto:2amdriveclub@gmail.com">napiš nám</a>.
+        {t.legal} <a href="mailto:2amdriveclub@gmail.com">{locale === "cs" ? "napiš nám" : "email us"}</a>.
       </p>
 
       {message && (
@@ -125,7 +123,7 @@ export function ApplicationForm() {
       )}
 
       <button className="btn" type="submit" disabled={state === "sending"}>
-        {state === "sending" ? "Odesílám…" : "Odeslat přihlášku"}
+        {state === "sending" ? t.sending : t.submit}
       </button>
     </form>
   );
