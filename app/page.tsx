@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { e46, faq, pillars, site, steps } from "@/lib/site";
+import { e46, faq, nextRide, pillars, site, steps } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -7,7 +7,7 @@ export default function HomePage() {
       {/* --- hero ------------------------------------------------------- */}
       <section className="hero">
         <div className="shell hero__inner">
-          <p className="eyebrow">{site.city} · noční jízdy · vstup na přihlášku</p>
+          <p className="eyebrow">{site.country} · noční jízdy · vstup na přihlášku</p>
           <h1 className="hero__title display">
             <span>Jezdíme,</span>
             <span>když ostatní</span>
@@ -31,12 +31,29 @@ export default function HomePage() {
           <div className="hero__ticker-track">
             {Array.from({ length: 4 }).map((_, i) => (
               <span key={i}>
-                2AM DRIVE CLUB · NIGHT RUNS · {site.city.toUpperCase()} ·
+                2AM DRIVE CLUB · NIGHT RUNS · {site.country.toUpperCase()} ·
               </span>
             ))}
           </div>
         </div>
       </section>
+
+      {/* --- nejbližší jízda --------------------------------------------- */}
+      {nextRide && (
+        <section className="section section--flush">
+          <div className="shell">
+            <Link href="/jizdy" className="ride-strip">
+              <span className="ride-strip__label">Nejbližší jízda</span>
+              <span className="ride-strip__date display">
+                {nextRide.dateLabel} · {nextRide.timeLabel} · {nextRide.region}
+              </span>
+              <span className="ride-strip__arrow" aria-hidden="true">
+                →
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* --- manifest --------------------------------------------------- */}
       <section className="section" id="manifest">
@@ -191,17 +208,34 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="shell cta">
           <h2 className="cta__title display">
-            Příští jízda
-            <br />
-            je za pár týdnů
+            {nextRide ? (
+              <>
+                Příští jízda
+                <br />
+                {nextRide.dateLabel}
+              </>
+            ) : (
+              <>
+                Příští jízda
+                <br />
+                je za pár týdnů
+              </>
+            )}
           </h2>
           <p className="lede">
             Skupina je malá schválně. Když se přihlásíš teď, jsi u toho od
             začátku — a začátek se zopakovat nedá.
           </p>
-          <Link href="/prihlaska" className="btn">
-            Podat přihlášku
-          </Link>
+          <div className="hero__actions">
+            <Link href="/prihlaska" className="btn">
+              Podat přihlášku
+            </Link>
+            {nextRide && (
+              <Link href="/jizdy" className="btn btn--ghost">
+                Jak jízdy fungují
+              </Link>
+            )}
+          </div>
         </div>
       </section>
     </>

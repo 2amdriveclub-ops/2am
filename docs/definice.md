@@ -101,6 +101,17 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 - E46 Garage vychází **pod hlavičkou 2am Drive Clubu a zdarma**, ke stažení z webu.
 - Web je **jen tmavý**. Klub se jmenuje 2am, světlý režim by byl lež.
 - Stack: Next.js + Vercel + Supabase.
+- **Model jízd** — tři vrstvy: jízda zdarma (kapacita malá schválně) → Hero Car
+  jako placený fotoservis pro 2–3 auta na jízdu → cíl jízdy u externího
+  partnera (streetfood/shisha), ne vlastní stánek klubu. Klub neprovozuje
+  gastro, jen tam přiveze lidi.
+- **Místo se nezveřejňuje předem.** Web smí ukázat jen kraj. Přesný bod srazu
+  (i trasa) padá do Torqly pár hodin před startem. Tohle není jen bezpečnost —
+  je to mechanika, která dělá appku povinnou, aniž by to muselo být řečeno.
+- **Klub nesedí v jednom městě.** Kraj se mění jízdu od jízdy — web dřív
+  tvrdil "Praha", což byl můj neověřený odhad, teď opraveno.
+- **První jízda: 2. 10. 2026, 01:00, Plzeňský kraj** (orientačně okolí
+  Kralovic — na web nejde, jen pro tým, viz výše).
 
 ## OTEVŘENO
 
@@ -111,7 +122,8 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | E46 Garage: platforma, odkaz ke stažení, jazyk (E46 komunita je hlavně anglicky mluvící). | Radek |
 | Jestli je Torqly společná firemní věc, nebo Radkova samostatná — a co na tom dělají Bohuslav a Adam. | všichni tři |
 | Doména: `2amdriveclub.cz` vs `.club` vs `.com` (na `.com` sedí americká kapela a bar stejného jména). | Radek |
-| Kdy a kde se jede první jízda. Bez termínu je nábor prázdný slib. | tým |
+| Hero Car sloty: cena a počet aut na jízdu (na webu zatím bez konkrétní ceny — "piš na e-mail"). | Radek |
+| Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
 
 ## ZAMÍTNUTO A PROČ
 

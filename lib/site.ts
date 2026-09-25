@@ -7,7 +7,9 @@ export const site = {
   name: "2AM Drive Club",
   wordmark: "2AM",
   tagline: "Klub pro ty, co jezdí, když ostatní spí.",
-  city: "Praha",
+  // Klub nesedí v jednom městě — kraj se mění jízdu od jízdy.
+  // Nikdy sem nepiš konkrétní obec, ta patří jen do `nextRide` a jen jako region.
+  country: "Česko",
   email: "2amdriveclub@gmail.com",
   instagram: "https://instagram.com/2amdriveclub",
   appStoreUrl:
@@ -73,10 +75,33 @@ export const faq = [
     a: "Ano. Klub se organizuje tam — termíny, trasy, evidence jízd i galerie. Bez toho bychom se domlouvali v třiceti SMS.",
   },
   {
-    q: "Jezdí se jen v Praze?",
-    a: "Zatím ano. Jakmile bude dost lidí z jiného kraje, otevřeme tam další odnož — a řekneme vám to.",
+    q: "Kde přesně se jezdí?",
+    a: "Kraj oznámíme dopředu, přesný sraz padne do aplikace pár hodin před startem. Kdo to chce vědět měsíc dopředu, hledá něco jiného než klub.",
+  },
+  {
+    q: "Jezdí se pořád na stejném místě?",
+    a: "Ne. Kraj se mění jízdu od jízdy — schválně, aby se z toho nestal další sraz na známém parkovišti.",
   },
 ];
+
+/**
+ * NEJBLIŽŠÍ JÍZDA — jediné místo, kde se mění konkrétní termín.
+ *
+ * Po každé jízdě sem dopiš další termín, nebo nastav `null` a sekce na webu
+ * zmizí sama (žádný "termín TBD" na produkci).
+ *
+ * Konkrétní obec (Kralovice) je jen orientační poznámka pro tým v docs/,
+ * na web nepatří — kraj je maximum, co se zveřejňuje předem.
+ */
+export const nextRide: {
+  dateLabel: string;
+  timeLabel: string;
+  region: string;
+} | null = {
+  dateLabel: "2. října 2026",
+  timeLabel: "01:00",
+  region: "Plzeňský kraj",
+};
 
 /**
  * E46 GARAGE — appka zdarma pod hlavičkou 2am Drive Clubu.

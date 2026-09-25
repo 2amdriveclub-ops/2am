@@ -14,7 +14,7 @@ export function SiteHeader() {
         </Link>
         <nav className="masthead__nav" aria-label="Hlavní">
           <a href="/#klub">Klub</a>
-          <a href="/#jak">Jak se dostat dovnitř</a>
+          <Link href="/jizdy">Jízdy</Link>
           <Link href="/e46-garage">E46 Garage</Link>
           <a href="/#faq">Otázky</a>
           <Link href="/prihlaska" className="btn btn--sm">

@@ -13,6 +13,7 @@ export function SiteFooter() {
           <div>
             <h2 className="footer__head">Klub</h2>
             <Link href="/prihlaska">Přihláška</Link>
+            <Link href="/jizdy">Jízdy</Link>
             <a href="/#klub">Co členství dává</a>
             <a href="/#faq">Otázky</a>
           </div>
@@ -30,7 +31,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer__base">
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>{site.city}</span>
+        <span>{site.country}</span>
       </div>
     </footer>
   );
