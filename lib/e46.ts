@@ -10,9 +10,20 @@
  * Appka je jen v češtině. Anglický překlad marketingového textu je tu
  * proto, aby web na .com doméně nebyl rozbitý, ale je to prozatímní
  * rozhodnutí, ne od Radka potvrzené — viz poznámka v `en.languageNote`.
+ *
+ * SCREENSHOT_BASE: dočasně ukazuje na raw.githubusercontent.com místo
+ * na /public/e46 — Vercel↔GitHub propojení na tomhle účtu je rozbité
+ * (git_info_fail při gitSource deployi), takže Vercel nemůže natáhnout
+ * binární soubory z repa sám a poslat je přes chat by stálo statisíce
+ * tokenů. Až Radek propojení opraví (Vercel dashboard → Settings →
+ * Git → reconnect), přepni zpátky na "/e46/<soubor>.jpg" a smaž tuhle
+ * poznámku i konstantu níž.
  */
 
 import type { Locale } from "./locale";
+
+const SCREENSHOT_BASE =
+  "https://raw.githubusercontent.com/2amdriveclub-ops/2am/014053b667f72006f7d13c9e66a6612fe3519fce/public/e46";
 
 export type E46Content = typeof e46.cs;
 
@@ -32,13 +43,13 @@ export const e46 = {
 
     modulesHeading: { eyebrow: "Co to umí", title: "Sedm modulů" },
     modules: [
-      { key: "garage", title: "Garáž", body: "Přehled auta — aktivní chyby, stav kódování, poslední jízda, napětí baterie, servisní položky.", screenshot: "/e46/garage.jpg" },
-      { key: "connection", title: "Připojení", body: "Připojení k autu přes K+DCAN kabel, detekce modulů, napětí.", screenshot: "/e46/connection.jpg" },
-      { key: "coding", title: "Coding", body: "Čtení a zápis kódování modulů (LSZ, GM5). Základní i pokročilý režim, české popisky místo německých zkratek.", screenshot: "/e46/coding.jpg" },
-      { key: "dtc", title: "Chyby (DTC)", body: "Čtení a mazání chybové paměti napříč moduly.", screenshot: "/e46/dtc.jpg" },
-      { key: "logger", title: "Logger", body: "Živé logování z DME — nastavitelný dashboard, budíky, graf, prohlížeč uložených jízd.", screenshot: "/e46/logger.jpg" },
-      { key: "tuning", title: "Tuning", body: "Úpravy kalibrace MS43: omezovač otáček, charakter motoru, plynový pedál. Zápis se zálohou, kontrolou a průběhem.", screenshot: "/e46/tuning.jpg" },
-      { key: "ai", title: "AI diagnostika", body: "Rozbor nalogovaných dat a chyb. Zatím rozpracované.", screenshot: "/e46/ai.jpg", wip: true },
+      { key: "garage", title: "Garáž", body: "Přehled auta — aktivní chyby, stav kódování, poslední jízda, napětí baterie, servisní položky.", screenshot: `${SCREENSHOT_BASE}/garage.jpg` },
+      { key: "connection", title: "Připojení", body: "Připojení k autu přes K+DCAN kabel, detekce modulů, napětí.", screenshot: `${SCREENSHOT_BASE}/connection.jpg` },
+      { key: "coding", title: "Coding", body: "Čtení a zápis kódování modulů (LSZ, GM5). Základní i pokročilý režim, české popisky místo německých zkratek.", screenshot: `${SCREENSHOT_BASE}/coding.jpg` },
+      { key: "dtc", title: "Chyby (DTC)", body: "Čtení a mazání chybové paměti napříč moduly.", screenshot: `${SCREENSHOT_BASE}/dtc.jpg` },
+      { key: "logger", title: "Logger", body: "Živé logování z DME — nastavitelný dashboard, budíky, graf, prohlížeč uložených jízd.", screenshot: `${SCREENSHOT_BASE}/logger.jpg` },
+      { key: "tuning", title: "Tuning", body: "Úpravy kalibrace MS43: omezovač otáček, charakter motoru, plynový pedál. Zápis se zálohou, kontrolou a průběhem.", screenshot: `${SCREENSHOT_BASE}/tuning.jpg` },
+      { key: "ai", title: "AI diagnostika", body: "Rozbor nalogovaných dat a chyb. Zatím rozpracované.", screenshot: `${SCREENSHOT_BASE}/ai.jpg`, wip: true },
     ],
 
     different: {
@@ -110,13 +121,13 @@ export const e46 = {
 
     modulesHeading: { eyebrow: "What it does", title: "Seven modules" },
     modules: [
-      { key: "garage", title: "Garage", body: "Car overview — active faults, coding status, last drive, battery voltage, service items.", screenshot: "/e46/garage.jpg" },
-      { key: "connection", title: "Connection", body: "Connect to the car over a K+DCAN cable, module detection, voltage.", screenshot: "/e46/connection.jpg" },
-      { key: "coding", title: "Coding", body: "Read and write module coding (LSZ, GM5). Basic and advanced mode, plain-language labels instead of German abbreviations.", screenshot: "/e46/coding.jpg" },
-      { key: "dtc", title: "Faults (DTC)", body: "Read and clear fault memory across modules.", screenshot: "/e46/dtc.jpg" },
-      { key: "logger", title: "Logger", body: "Live logging from the DME — configurable dashboard, gauges, plots, a viewer for saved drives.", screenshot: "/e46/logger.jpg" },
-      { key: "tuning", title: "Tuning", body: "MS43 calibration edits: rev limiter, engine character, throttle pedal. Writes with a backup, verification and a progress log.", screenshot: "/e46/tuning.jpg" },
-      { key: "ai", title: "AI diagnostics", body: "Analysis of logged data and faults. Still a work in progress.", screenshot: "/e46/ai.jpg", wip: true },
+      { key: "garage", title: "Garage", body: "Car overview — active faults, coding status, last drive, battery voltage, service items.", screenshot: `${SCREENSHOT_BASE}/garage.jpg` },
+      { key: "connection", title: "Connection", body: "Connect to the car over a K+DCAN cable, module detection, voltage.", screenshot: `${SCREENSHOT_BASE}/connection.jpg` },
+      { key: "coding", title: "Coding", body: "Read and write module coding (LSZ, GM5). Basic and advanced mode, plain-language labels instead of German abbreviations.", screenshot: `${SCREENSHOT_BASE}/coding.jpg` },
+      { key: "dtc", title: "Faults (DTC)", body: "Read and clear fault memory across modules.", screenshot: `${SCREENSHOT_BASE}/dtc.jpg` },
+      { key: "logger", title: "Logger", body: "Live logging from the DME — configurable dashboard, gauges, plots, a viewer for saved drives.", screenshot: `${SCREENSHOT_BASE}/logger.jpg` },
+      { key: "tuning", title: "Tuning", body: "MS43 calibration edits: rev limiter, engine character, throttle pedal. Writes with a backup, verification and a progress log.", screenshot: `${SCREENSHOT_BASE}/tuning.jpg` },
+      { key: "ai", title: "AI diagnostics", body: "Analysis of logged data and faults. Still a work in progress.", screenshot: `${SCREENSHOT_BASE}/ai.jpg`, wip: true },
     ],
 
     different: {
