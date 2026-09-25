@@ -1,6 +1,6 @@
 # 2AM Drive Club — definice
 
-*Pracovní dokument. Aktualizováno 24. 9. 2026. Zapsal: Jarvis, na základě session s Radkem.*
+*Pracovní dokument. Aktualizováno 25. 9. 2026. Zapsal: Jarvis, na základě session s Radkem.*
 
 ---
 
@@ -59,7 +59,26 @@ Tři lidi, kteří umí obraz. **Na každé jízdě jede fotograf a členové r�
 dostanou fotky, jaké si sami neudělají.** Tohle žádný konkurenční car app ani
 klub neudělá, protože to neumí — a je to důvod, proč lidi zůstanou.
 
-## 7. Web — čeho má dosáhnout
+## 7. Hlas značky — interní, nikam se nepublikuje
+
+Zakladatelé mají neformální vnitřní kód: **bratrství, peníze, přitažlivost.**
+Tahle sekce existuje proto, aby to Bohuslav a Adam nemuseli za tři měsíce
+vymýšlet znovu, když budou psát Instagram caption nebo vybírat fotku na
+titulku. **Nikde v žádném veřejném textu se ty tři slova neobjeví** — v tabulce
+níž je jen to, jak se to má poznat z chování a vizuálu, ne z popisku.
+
+| Hodnota | Jak se to pozná (a ne, jak se to řekne) |
+|---|---|
+| **Bratrství** | Nikdo není na fotce sám — i sólo hero shot má v kontextu posádku. Oslovení "posádka", ne "uživatelé". Referral (člen zve člena) jako hlavní růstový kanál, ne placená reklama. Karta/patch člena jako fyzický důkaz sounáležitosti, viditelný jen zevnitř. |
+| **Peníze** | Nikdy se neřeknou nahlas — ukážou se. Černá + zlatá sodíková, hodně prázdného prostoru, žádné vykřičníky. Výběr auta na jízdu podle péče, ne podle ceny. Hero Car slot = platíš za to, že tě vidí. Copy bez chlubení, krátké věty, understatement. |
+| **Přitažlivost** | Nejcitlivější bod — realizuje se jako *magnetismus*, ne jako lidé-jako-doplněk. Fotostyl je kino, ne katalog: lidi kolem auta mají vypadat dobře, ne jen plech. Cíl jízdy je místo, kam má smysl někoho vzít, ne kam se schováváš. Nosná věta, která tohle nese beze slova navíc: *"Vypadá to tak, že se za tebou lidi otáčí."* |
+
+**Proč takhle, a ne napsat to rovnou:** doslovná verze zavírá dveře sponzorům
+i polovině publika a navíc je to přesně to klišé, kterým klub záměrně není
+("nejsme sraz u Kauflandu"). Nenápadná verze dělá totéž ve výsledku, ale nemá
+se čeho chytit kritika ani reklamní právník.
+
+## 8. Web — čeho má dosáhnout
 
 Jediná metrika: **počet podaných přihlášek + počet stažení E46 Garage.**
 Ne návštěvnost, ne čas na stránce.
@@ -78,6 +97,7 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 - 2am Drive Club **není** samostatná platforma, je to značka + klub nad Torqly.
 - Členská mechanika (profily, evidence, srazy) **žije v Torqly**, ne na webu.
 - Vstup do klubu je **na přihlášku**, ne na otevřenou registraci.
+- Zakladatelské hodnoty (viz sekce 7) se do značky **propisují chováním, ne textem** — nikde na webu nestojí, co znamenají, a nemá to podobu zveřejněného motta.
 - E46 Garage vychází **pod hlavičkou 2am Drive Clubu a zdarma**, ke stažení z webu.
 - Web je **jen tmavý**. Klub se jmenuje 2am, světlý režim by byl lež.
 - Stack: Next.js + Vercel + Supabase.
