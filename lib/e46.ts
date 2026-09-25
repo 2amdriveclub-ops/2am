@@ -87,7 +87,7 @@ export const e46 = {
       eyebrow: "Zdarma a open source",
       title: "Podpoř to",
       body: "Appka je zdarma, open source, licence GPLv3 (kvůli knihovně EdiabasLib). Žádný paywall, žádná registrace, žádná omezená verze. Jediná forma podpory je Buy Me a Coffee.",
-      cta: "Buy Me a Coffee",
+      cta: "Buy Me Gas",
     },
 
     limitations: "Zatím jen Windows a jen MS43 (M54). AI diagnostika je rozpracovaná — nic z toho appka neslibuje jako hotové.",
@@ -165,7 +165,7 @@ export const e46 = {
       eyebrow: "Free and open source",
       title: "Support it",
       body: "The app is free, open source, licensed GPLv3 (due to the EdiabasLib dependency). No paywall, no sign-up, no crippled free tier. The only form of support is Buy Me a Coffee.",
-      cta: "Buy Me a Coffee",
+      cta: "Buy Me Gas",
     },
 
     limitations: "Windows only, and MS43 (M54) only for now. AI diagnostics is a work in progress — nothing here is promised as finished.",
