@@ -2,7 +2,7 @@
   "mcpServers": {
     "supabase-jarvis": {
       "type": "http",
-      "url": "https://mcp.supabase.com/mcp?project_ref=DOPLNIT_REF_PROJEKTU_JARVIS&features=database%2Cdocs%2Cdebugging"
+      "url": "https://mcp.supabase.com/mcp?project_ref=corwufqibjbdvsqhqphh&features=database%2Cdocs%2Cdebugging"
     },
     "supabase-obskura": {
       "type": "http",

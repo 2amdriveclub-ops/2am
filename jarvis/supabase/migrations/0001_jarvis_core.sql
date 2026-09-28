@@ -1,8 +1,11 @@
 -- Jarvis — sdílená paměť (Supabase projekt "jarvis")
 -- Migrace 0001 · 26. 9. 2026
--- 10 tabulek podle "Jarvis — architektura v1".
+-- 10 tabulek (+ owners) podle "Jarvis — architektura v1".
 -- RLS zapnuté všude: přístup mají jen přihlášení majitelé (tabulka owners).
 -- Agenti přes Supabase MCP / service role RLS obcházejí.
+-- Prvního majitele nejde vložit přes RLS (ještě nikdo není owner) —
+-- po registraci v command centru ho vlož přes SQL / MCP:
+--   insert into public.owners (user_id, name) values ('<auth.users.id>', 'Radek');
 
 create extension if not exists pgcrypto;
 
@@ -24,6 +27,9 @@ set search_path = public
 as $$
   select exists (select 1 from public.owners where user_id = auth.uid());
 $$;
+
+revoke execute on function public.is_owner() from public, anon;
+grant execute on function public.is_owner() to authenticated;
 
 -- ---------------------------------------------------------------
 -- 1. projects
@@ -66,6 +72,7 @@ create table public.agents (
 create or replace function public.check_agent_parent()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 declare parent_level smallint;
 begin
@@ -88,6 +95,7 @@ for each row execute function public.check_agent_parent();
 create or replace function public.check_l3_limit()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 begin
   if new.level = 3 and new.status = 'active' and (
@@ -242,6 +250,7 @@ create table public.context (
 create or replace function public.touch_updated_at()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 begin
   new.updated_at = now();
@@ -307,7 +316,9 @@ from (values
   ('firma',   'Volání přes WhatsApp Business API',               'Ověření u Mety a postupné zavádění, zbytečné pro 2 lidi',  '2026-09-26'),
   ('firma',   'Slack jako hlavní rozhraní',                      'Chtějí vlastní command center',                            '2026-09-26'),
   ('firma',   'Generický stock, marketplace, obsahové předplatné jako hlavní byznys', 'Zamítnuto v brainstormingu',        '2026-09-09'),
-  ('obskura', 'Pětidenní expirace full-res fotek',               'Egress u Cloudflare R2 je zdarma',                         '2026-09-10')
+  ('obskura', 'Pětidenní expirace full-res fotek',               'Egress u Cloudflare R2 je zdarma',                         '2026-09-10'),
+  ('obskura', 'Názvy Keepr, Latent, Rush, Ostro a další',        'Zabrané v App Store / doméně; vybrána Obskura',            '2026-09-10'),
+  ('obskura', 'Teplé a tlumené palety (temná komora, kyanotyp, negativ)', 'Radkovi se nelíbily',                             '2026-09-10')
 ) as r(slug, idea, reason, rejected_on)
 join public.projects p on p.slug = r.slug;
 

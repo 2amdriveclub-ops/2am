@@ -8,5 +8,5 @@ Kdy: denně 7:45 (Europe/Prague). V pondělí navíc hovor (až bude telefon).
    - **Co hoří** — úkoly po termínu, blokery.
    - **Ke schválení** — `approvals` pending, nejstarší první.
    - **Stav cíle Q4** — kolik Kč máme (jen z `metrics`), kolik zbývá, kolik dní zbývá. Chybí data → napiš, že chybí.
-3. Brief ulož do `runs.summary` a pošli kanálem, který je nastavený (zatím: soubor `briefs/YYYY-MM-DD.md` v repu).
+3. Brief dej na konec výstupu (spouštěcí skript ho uloží do `runs.summary`) a pošli kanálem, který je nastavený (zatím: soubor `briefs/YYYY-MM-DD.md` v repu).
 4. Nic neposílej ven mimo majitele.

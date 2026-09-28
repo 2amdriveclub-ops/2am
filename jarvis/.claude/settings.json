@@ -24,5 +24,10 @@
       "Bash(rm -rf:*)",
       "Bash(git push --force:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "supabase-jarvis",
+    "supabase-obskura",
+    "vercel"
+  ]
 }

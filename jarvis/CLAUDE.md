@@ -40,7 +40,8 @@ Adam od 26. 9. 2026 není členem týmu — nezadávej mu úkoly a nepočítej s
 - **L1 Jarvis** — řídí celek, priority napříč projekty. Nového L2 agenta jen se schválením.
 - **L2** — projektoví agenti (Obskura, Torqly, Drive Club, Ateliér) a CFO. Šablony v `prompts/`.
 - **L3 sub-agenti** — jeden úkol, max 3 souběžně na projekt, rozpočet, termín, po úkolu zanikají. Další agenty tvořit nesmí.
-- Každý běh agenta zapiš do `runs` (trigger, summary, cost_usd).
+- Každý běh agenta zapiš do `runs` (trigger, summary, cost_usd). Výjimka: smyčky spuštěné přes `scripts/run-loop.sh` zapisuje skript sám i se skutečnými náklady — nezapisuj je podruhé.
+- Náklady nikdy neodhaduj. Když `cost_usd` neznáš, nech ho prázdný.
 
 ## Rozpočet
 

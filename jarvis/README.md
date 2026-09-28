@@ -22,25 +22,24 @@ Claude Code na PC ho čte při každé session, appka Claude (mobil, web) sdíl�
    ```bash
    npm install -g @anthropic-ai/claude-code
    ```
-2. **Založ repo na GitHubu** `jarvis` (private) a nahraj do něj obsah tohohle balíčku.
+2. **Naklonuj repo `2am`** — Jarvis zatím bydlí ve složce `jarvis/` (rozhodnuto 28. 9. 2026, Radek). Do samostatného repa se dá kdykoli přesunout.
    ```bash
-   cd jarvis
-   git init && git add . && git commit -m "Jarvis: start balíček"
-   git remote add origin git@github.com:<ucet>/jarvis.git
-   git push -u origin main
+   git clone git@github.com:2amdriveclub-ops/2am.git
+   cd 2am/jarvis
    ```
-3. **Založ Supabase projekt** `jarvis` (region EU, stejná organizace jako fotoapp) a jeho *Reference ID* (Project Settings → General) vlož do `.mcp.json` místo `DOPLNIT_REF_PROJEKTU_JARVIS`.
-4. **Spusť Claude Code ve složce repa** a autorizuj MCP:
+3. ~~Založ Supabase projekt~~ — **hotovo 28. 9. 2026**: projekt `jarvis` (ref `corwufqibjbdvsqhqphh`, eu-central-1, free), migrace 0001 aplikovaná a ověřená, ref je v `.mcp.json`.
+4. **Spusť Claude Code ve složce `jarvis/`** (ne v kořeni repa — jinak se nenačte `CLAUDE.md`, `.mcp.json` ani oprávnění) a autorizuj MCP:
    ```bash
    claude
    /mcp
    ```
    Přihlas Supabase a Vercel v prohlížeči.
-5. **Řekni Jarvisovi:** „Aplikuj migraci `supabase/migrations/0001_jarvis_core.sql` do projektu jarvis a ověř tabulky.“
+5. **Vyplň `.env`** podle `.env.example` (token pro cron, service role klíč pro zápis nákladů do `runs`).
 6. **Otestuj ranní brief ručně:**
    ```bash
    ./scripts/run-loop.sh morning-brief
    ```
+   Pak zkontroluj `logs/` a že v tabulce `runs` přibyl řádek s `cost_usd`.
 7. **Zapni smyčky** podle `scripts/schedule.md` (cron na Macu/Linuxu, Plánovač úloh na Windows).
 
 ## Pravidla repa
