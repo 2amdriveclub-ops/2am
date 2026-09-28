@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Edit(briefs/**)",
+      "Write(briefs/**)",
+      "Edit(context/**)",
+      "Write(context/**)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "mcp__supabase-jarvis",
+      "mcp__supabase-obskura"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "supabase-jarvis",
+    "supabase-obskura",
+    "vercel"
+  ]
+}

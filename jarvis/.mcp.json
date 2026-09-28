@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "supabase-jarvis": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=corwufqibjbdvsqhqphh&features=database%2Cdocs%2Cdebugging"
+    },
+    "supabase-obskura": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=linkbkahgvfxseonongv&read_only=true&features=database%2Cdocs"
+    },
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    }
+  }
+}
