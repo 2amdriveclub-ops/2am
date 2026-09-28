@@ -1,0 +1,9 @@
+# Klíče a tajnosti — NIKDY do gitu
+.env
+.env.*
+!.env.example
+
+# Lokální věci
+.DS_Store
+node_modules/
+*.log
