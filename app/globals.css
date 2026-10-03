@@ -242,7 +242,7 @@ img { max-width: 100%; display: block; }
 .btn--sm { padding: 10px 18px; }
 
 @media (max-width: 860px) {
-  .masthead__nav a:not(.btn) { display: none; }
+  .masthead__nav > a:not(.btn) { display: none; }
 }
 
 /* --- hero --------------------------------------------------------------- */
@@ -1101,3 +1101,10 @@ img { max-width: 100%; display: block; }
   .unit { grid-template-columns: 1fr; }
   .unit__summary { position: static; }
 }
+
+/* --- přepínač jazyka ------------------------------------------------------ */
+
+.lang { display: inline-flex; gap: 2px; font-family: var(--font-display), sans-serif; letter-spacing: 0.12em; }
+.masthead__nav .lang__link { padding: 6px 7px; color: var(--fg-faint); text-decoration: none; border-radius: var(--radius); }
+.masthead__nav .lang__link:hover { color: var(--fg); }
+.masthead__nav .lang__link.is-on { color: var(--accent); }

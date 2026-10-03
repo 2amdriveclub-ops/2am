@@ -32,6 +32,7 @@ je vedlejší efekt členství, ne důvod k instalaci.
 |---|---|---|---|
 | **2am Drive Club** | značka, klub, komunita, web | zdarma (na přihlášku) | pozornost a důvěra |
 | **E46 Garage** | desktopová appka (Windows) na diagnostiku/kódování/tuning E46 M54 (MS43) | zdarma, open source (GPLv3) | akviziční magnet, vstup do ekosystému |
+| **E46 Garage jednotka** | hotová MS43 s MS43X a předvolbami z modulu Tuning, plug and play | 4 990 Kč při výměně + vratná záloha 1 500 Kč | první placený produkt kolem E46 |
 | **Torqly.ai** | garáž, deník jízd, kluby, pro všechna auta | předplatné | tržby |
 
 Logika: *free niche tool → komunita → placený obecný nástroj.* E46 Garage je
@@ -120,6 +121,21 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   tvrdil "Praha", což byl můj neověřený odhad, teď opraveno.
 - **První jízda: 2. 10. 2026, 01:00, Plzeňský kraj** (orientačně okolí
   Kralovic — na web nejde, jen pro tým, viz výše).
+- **E46 Garage prodává hotové jednotky** (Radek, 3. 10. 2026). MS43
+  s MS43X a předvolbami z modulu Tuning (omezovač, pedál Sport, volnoběh,
+  DISA, VANOS, chlazení, tempomat). Mapy předstihu a paliva se neupravují.
+  Dvě cesty: koupě, nebo výměna se zálohou, kdy pošleme první my
+  a zákazník vrátí původní jednotku. Cena při výměně 4 990 Kč („do 5K“,
+  v UK £170–220), záloha 1 500 Kč. Software zůstává zdarma. Tímhle se
+  mění bod 5 zadání („Buy Me a Coffee jediná forma podpory“): placená je
+  služba, appka dál ne.
+- **EWS v jednotkách vypnutý** (Radek, 3. 10.). Jarvis byl proti kvůli
+  pojištění a krádeži; britští prodejci to dělají stejně. Zákazník to
+  na webu musí odškrtnout, bez toho poptávka neodejde.
+- Ke každé jednotce odkaz na zdroják MS43X — je pod GPL-3.0.
+- **Přepínač jazyka CZ/EN v hlavičce** (Radek, 3. 10.). Mění dřívější
+  „jazyk jen podle domény“: doména určuje výchozí jazyk, ruční volba se
+  uloží do cookie `lang` a má přednost.
 
 ## OTEVŘENO
 
@@ -133,6 +149,9 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | Doména: `.com` koupena (přesný název zatím nemám), `.cz` k potvrzení. Web už jazyk podle domény rozlišuje (`.cz` → čeština, jinak angličtina). | Radek |
 | Hero Car sloty: cena a počet aut na jízdu (na webu zatím bez konkrétní ceny — "piš na e-mail"). | Radek |
 | Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
+| E46 jednotka: cena koupě bez výměny (návrh Jarvise 6 490 Kč = cena + záloha, protože se nevrátí jádro na další kus) a lhůta na vrácení původní jednotky. Do té doby web píše „potvrdíme e-mailem“. | Radek |
+| E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
+| E46 jednotka: obchodní podmínky, reklamace a záruka. Upravená jednotka je asi zboží „podle přání spotřebitele“, kde se nedá odstoupit do 14 dnů — ověřit. | Radek |
 
 ## ZAMÍTNUTO A PROČ
 
@@ -153,4 +172,5 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | 3 | Sjednotit pozicování Torqly (web vs App Store) | Radek | — |
 | 4 | Dodat 6–10 fotek z jízd do galerie | Bohuslav / Adam | — |
 | 5 | Vypsat termín první jízdy | tým | — |
-| 6 | Založit Supabase projekt a pustit migraci | Jarvis (na pokyn) | — |
+| 6 | Založit Supabase projekt a pustit migrace (0001 přihlášky, 0002 poptávky jednotek) — bez toho formuláře jen odkážou na e-mail | Jarvis (na pokyn) | — |
+| 7 | Doplnit cenu koupě a lhůtu vrácení v `lib/e46.ts` → `e46UnitPricing` | Radek | — |

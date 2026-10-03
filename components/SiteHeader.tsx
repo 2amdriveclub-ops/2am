@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/locale";
 
@@ -20,6 +21,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           <Link href="/jizdy">{c.nav.rides}</Link>
           <Link href="/e46-garage">{c.nav.e46}</Link>
           <a href="/#faq">{c.nav.faq}</a>
+          <LanguageSwitch locale={locale} />
           <Link href="/prihlaska" className="btn btn--sm">
             {c.nav.apply}
           </Link>
