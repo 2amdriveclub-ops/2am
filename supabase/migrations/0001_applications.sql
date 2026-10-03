@@ -33,10 +33,11 @@ create unique index if not exists applications_email_key
 
 alter table public.applications enable row level security;
 
--- Anon role smí vložit přihlášku a nic víc: žádný select, update ani delete.
+-- Anon role smí vložit přihlášku a nic víc: žádný select, update ani delete,
+-- a nesmí si sám nastavit stav (třeba 'approved') ani poznámku týmu.
 drop policy if exists "anon can submit application" on public.applications;
 create policy "anon can submit application"
   on public.applications
   for insert
   to anon
-  with check (true);
+  with check (status = 'pending' and note is null);

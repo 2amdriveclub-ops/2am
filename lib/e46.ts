@@ -33,7 +33,7 @@ export const e46 = {
     subtitle: "UNDERGROUND TUNING DIVISION",
     tagline: "Diagnostika, kódování a tuning BMW E46 M54 (MS43) z jednoho okna.",
     status: "BUILD 0.7 · funkční a odzkoušené na dvou reálných autech",
-    ctas: { download: "Stáhnout", github: "GitHub", soon: "Brzy" },
+    ctas: { download: "Stáhnout", github: "GitHub", soon: "Brzy", unit: "Hotová jednotka" },
 
     why: {
       eyebrow: "Proč to existuje",
@@ -73,6 +73,8 @@ export const e46 = {
         "XDF a ADX definice pro MS43 — veřejně ke stažení z wiki projektu MS4X.",
         "K+DCAN kabel (FTDI, připojuje se na COM port).",
       ],
+      unitHint: "Nechceš nic z toho řešit?",
+      unitHintLink: "Pošleme ti hotovou jednotku",
     },
 
     download: {
@@ -102,6 +104,87 @@ export const e46 = {
     },
 
     limitations: "Zatím jen Windows a jen MS43 (M54). AI diagnostika je rozpracovaná — nic z toho appka neslibuje jako hotové.",
+
+    unit: {
+      eyebrow: "Hotová jednotka",
+      title: "Nechceš flashovat sám?",
+      lead: "Pošleme ti řídicí jednotku MS43 s nahraným MS43X a nastavením, které si tady vybereš. Přepojíš ji místo původní a jedeš. Kabel, EDIABAS ani software k tomu nepotřebuješ. Appka zůstává zdarma ke stažení pro každého, kdo si to chce udělat sám.",
+      modeHeading: "Jak ji chceš",
+      modes: [
+        { value: "exchange", label: "Výměna se zálohou", desc: "Zaplatíš cenu a vratnou zálohu. Jednotku pošleme hned, ty nám pak pošleš původní. Když dorazí funkční, zálohu vrátíme." },
+        { value: "buy", label: "Koupě", desc: "Jednotka je tvoje a původní si necháš. Bez zálohy a bez posílání zpátky." },
+      ],
+      stepsHeading: "Jak to proběhne",
+      exchangeSteps: [
+        "Vybereš nastavení a pošleš poptávku.",
+        "Pošleme ti nabídku, zaplatíš cenu a vratnou zálohu.",
+        "Pošleme ti hotovou jednotku s MS43X.",
+        "Přepojíš ji a původní jednotku nám pošleš zpátky.",
+        "Když původní dorazí funkční, vrátíme ti zálohu.",
+      ],
+      buySteps: [
+        "Vybereš nastavení a pošleš poptávku.",
+        "Pošleme ti nabídku a zaplatíš.",
+        "Pošleme ti hotovou jednotku, přepojíš ji a jedeš.",
+      ],
+      carHeading: "Tvoje auto",
+      engineLabel: "Motor",
+      engines: [
+        { value: "M54B22", label: "M54B22 · 320i" },
+        { value: "M54B25", label: "M54B25 · 325i" },
+        { value: "M54B30", label: "M54B30 · 330i" },
+        { value: "unknown", label: "Nevím, poradíte" },
+      ],
+      gearboxLabel: "Převodovka",
+      gearboxes: [
+        { value: "manual", label: "Manuál" },
+        { value: "automatic", label: "Automat" },
+      ],
+      vinLabel: "Posledních 7 znaků VIN",
+      vinHint: "Nepovinné. Pomůže nám ověřit verzi tvé jednotky.",
+      optionsHeading: "Co v jednotce nastavit",
+      optionsHint: "Stejné úpravy jako modul Tuning v appce. Mapy předstihu a paliva se neupravují, motor se tím odpálit nedá.",
+      options: [
+        { value: "rev_limiter", label: "Omezovač otáček", hint: "Do poznámky napiš, na kolik." },
+        { value: "pedal_sport", label: "Plynový pedál Sport", hint: "Ostřejší odezva pedálu." },
+        { value: "idle", label: "Volnoběh", hint: "" },
+        { value: "disa", label: "DISA", hint: "" },
+        { value: "vanos", label: "VANOS", hint: "" },
+        { value: "cooling", label: "Chlazení", hint: "" },
+        { value: "cruise", label: "Tempomat", hint: "" },
+      ],
+      noteLabel: "Co přesně chceš",
+      noteHint: "Třeba omezovač na kolik otáček. Když nevíš, napiš, jak auto používáš, a nastavení ti navrhneme.",
+      contactHeading: "Kontakt",
+      nameLabel: "Jméno a příjmení",
+      emailLabel: "E-mail",
+      phoneLabel: "Telefon",
+      optional: "nepovinné",
+      ewsTitle: "Imobilizér je vypnutý",
+      ewsBody: "V jednotce je vypnutý imobilizér (EWS), takže auto nastartuje bez párování. Auto pak ale nemá tovární ochranu proti krádeži. Ověř si u své pojišťovny, jestli to nemá vliv na pojištění.",
+      ack: "Beru na vědomí, že jednotka má vypnutý imobilizér a je určená pro použití mimo veřejné pozemní komunikace.",
+      summaryHeading: "Tvoje jednotka",
+      summaryBase: "MS43 s MS43X",
+      summaryNoOptions: "Bez úprav, čisté MS43X",
+      summaryCarPending: "Vyber motor a převodovku",
+      priceLabel: "Cena",
+      depositLabel: "Vratná záloha",
+      pricePending: "potvrdíme e-mailem",
+      returnLabel: "Původní vrátíš do",
+      returnPending: "lhůty z nabídky",
+      days: "dnů",
+      submit: "Odeslat nezávaznou poptávku",
+      sending: "Odesílám…",
+      submitNote: "Nic neplatíš, dokud nepotvrdíš nabídku, kterou ti pošleme e-mailem.",
+      genericError: "Zkontroluj prosím vyplněná pole.",
+      networkError: "Nepodařilo se odeslat. Zkus to prosím ještě jednou.",
+      done: {
+        title: "Poptávka je u nás.",
+        body: "Ozveme se e-mailem s cenou, zálohou a termínem odeslání. Nic neplatíš, dokud nabídku nepotvrdíš.",
+      },
+      gpl: "MS43X je open source pod licencí GPL-3.0. Vyvíjí ho komunitní projekt MS4X, se kterým nemáme žádné partnerství. Zdrojový kód je veřejně:",
+      gplLink: "MS43X na GitHubu",
+    },
   },
 
   en: {
@@ -111,7 +194,7 @@ export const e46 = {
     subtitle: "UNDERGROUND TUNING DIVISION",
     tagline: "Diagnostics, coding and tuning for BMW E46 M54 (MS43), from one window.",
     status: "BUILD 0.7 · working, tested on two real cars",
-    ctas: { download: "Download", github: "GitHub", soon: "Coming soon" },
+    ctas: { download: "Download", github: "GitHub", soon: "Coming soon", unit: "Ready-made unit" },
 
     why: {
       eyebrow: "Why this exists",
@@ -151,6 +234,8 @@ export const e46 = {
         "XDF and ADX definitions for MS43 — publicly available from the MS4X project wiki.",
         "A K+DCAN cable (FTDI, connects over a COM port).",
       ],
+      unitHint: "Don't want to deal with any of this?",
+      unitHintLink: "We'll send you a ready-made unit",
     },
 
     download: {
@@ -180,6 +265,87 @@ export const e46 = {
     },
 
     limitations: "Windows only, and MS43 (M54) only for now. AI diagnostics is a work in progress — nothing here is promised as finished.",
+
+    unit: {
+      eyebrow: "Ready-made unit",
+      title: "Don't want to flash it yourself?",
+      lead: "We'll send you an MS43 engine control unit with MS43X and the setup you pick here. Swap it in for your original and drive. No cable, no EDIABAS, no software needed. The app stays free to download for anyone who wants to do it themselves.",
+      modeHeading: "How you want it",
+      modes: [
+        { value: "exchange", label: "Exchange with deposit", desc: "You pay the price plus a refundable deposit. We ship the unit right away, then you send us your original. Once it arrives working, we refund the deposit." },
+        { value: "buy", label: "Buy outright", desc: "The unit is yours and you keep your original. No deposit, nothing to send back." },
+      ],
+      stepsHeading: "How it works",
+      exchangeSteps: [
+        "Pick your setup and send the request.",
+        "We send you a quote; you pay the price and the refundable deposit.",
+        "We ship you the finished unit with MS43X.",
+        "You swap it in and send your original unit back to us.",
+        "Once your original arrives working, we refund the deposit.",
+      ],
+      buySteps: [
+        "Pick your setup and send the request.",
+        "We send you a quote and you pay.",
+        "We ship you the finished unit; swap it in and drive.",
+      ],
+      carHeading: "Your car",
+      engineLabel: "Engine",
+      engines: [
+        { value: "M54B22", label: "M54B22 · 320i" },
+        { value: "M54B25", label: "M54B25 · 325i" },
+        { value: "M54B30", label: "M54B30 · 330i" },
+        { value: "unknown", label: "Not sure, help me" },
+      ],
+      gearboxLabel: "Gearbox",
+      gearboxes: [
+        { value: "manual", label: "Manual" },
+        { value: "automatic", label: "Automatic" },
+      ],
+      vinLabel: "Last 7 characters of your VIN",
+      vinHint: "Optional. Helps us check which unit version you have.",
+      optionsHeading: "What to set up in the unit",
+      optionsHint: "The same changes as the app's Tuning module. Ignition and fuel maps stay untouched, so this can't blow up the engine.",
+      options: [
+        { value: "rev_limiter", label: "Rev limiter", hint: "Tell us the RPM in the note." },
+        { value: "pedal_sport", label: "Sport throttle pedal", hint: "Sharper pedal response." },
+        { value: "idle", label: "Idle", hint: "" },
+        { value: "disa", label: "DISA", hint: "" },
+        { value: "vanos", label: "VANOS", hint: "" },
+        { value: "cooling", label: "Cooling", hint: "" },
+        { value: "cruise", label: "Cruise control", hint: "" },
+      ],
+      noteLabel: "What exactly you want",
+      noteHint: "For example, the rev limit you want. Not sure? Tell us how you use the car and we'll suggest a setup.",
+      contactHeading: "Contact",
+      nameLabel: "Full name",
+      emailLabel: "Email",
+      phoneLabel: "Phone",
+      optional: "optional",
+      ewsTitle: "The immobilizer is disabled",
+      ewsBody: "The immobilizer (EWS) is disabled in the unit, so the car starts without pairing. That also means the car loses its factory theft protection. Check with your insurer whether this affects your cover.",
+      ack: "I understand the unit has the immobilizer disabled and is intended for off-road use only.",
+      summaryHeading: "Your unit",
+      summaryBase: "MS43 with MS43X",
+      summaryNoOptions: "No changes, plain MS43X",
+      summaryCarPending: "Pick engine and gearbox",
+      priceLabel: "Price",
+      depositLabel: "Refundable deposit",
+      pricePending: "confirmed by email",
+      returnLabel: "Return your original within",
+      returnPending: "the time in your quote",
+      days: "days",
+      submit: "Send request (no obligation)",
+      sending: "Sending…",
+      submitNote: "You don't pay anything until you accept the quote we email you.",
+      genericError: "Please check the fields you filled in.",
+      networkError: "Couldn't send it. Please try again.",
+      done: {
+        title: "Got your request.",
+        body: "We'll email you the price, deposit and shipping date. You don't pay anything until you accept the quote.",
+      },
+      gpl: "MS43X is open source under the GPL-3.0 license. It's developed by the community MS4X project, which we have no partnership with. The source code is public:",
+      gplLink: "MS43X on GitHub",
+    },
   },
 } satisfies Record<Locale, unknown>;
 
@@ -197,6 +363,29 @@ export const e46Links: {
   releases: null,
   buyMeACoffee: null,
 };
+
+/**
+ * Ceník hotových jednotek. Dokud je hodnota `null`, web místo čísla píše
+ * "potvrdíme e-mailem". Kč, Radek je neplátce DPH.
+ * - unitCzk: cena při výměně (Radek 3. 10.: "do 5K").
+ * - depositCzk: vratná záloha při výměně (Radek 3. 10.: 1 500 Kč).
+ * - buyCzk: koupě bez výměny. Původní jednotka se nevrátí, takže z ní
+ *   nejde udělat další kus. Návrh Jarvise: unitCzk + depositCzk, čeká na Radka.
+ * - returnDays: lhůta na vrácení původní jednotky u výměny.
+ */
+export const e46UnitPricing: {
+  unitCzk: number | null;
+  depositCzk: number | null;
+  buyCzk: number | null;
+  returnDays: number | null;
+} = {
+  unitCzk: 4990,
+  depositCzk: 1500,
+  buyCzk: null,
+  returnDays: null,
+};
+
+export const ms43xSourceUrl = "https://github.com/ms4x-net/MS43X-Custom-Firmware";
 
 export function getE46(locale: Locale): E46Content {
   return e46[locale];

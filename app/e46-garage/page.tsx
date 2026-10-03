@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { getE46, e46Links } from "@/lib/e46";
+import { E46UnitConfigurator } from "@/components/E46UnitConfigurator";
+import { getE46, e46Links, e46UnitPricing, ms43xSourceUrl } from "@/lib/e46";
 import { getLocale } from "@/lib/locale";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,6 +37,9 @@ export default async function E46Page() {
                 {e46.ctas.github} · {e46.ctas.soon}
               </span>
             )}
+            <a href="#jednotka" className="btn btn--ghost btn--cyan">
+              {e46.ctas.unit}
+            </a>
           </div>
           <p className="e46-hero__status">{e46.status}</p>
         </div>
@@ -101,6 +105,9 @@ export default async function E46Page() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <p className="e46-checklist__unit">
+              {e46.requirements.unitHint} <a href="#jednotka">{e46.requirements.unitHintLink} →</a>
+            </p>
           </div>
         </div>
       </section>
@@ -127,6 +134,22 @@ export default async function E46Page() {
           </div>
 
           <p className="e46-smartscreen">{e46.download.smartscreen}</p>
+        </div>
+      </section>
+
+      {/* --- hotová jednotka (prodej / výměna se zálohou) ------------------------ */}
+      <section className="section" id="jednotka">
+        <div className="shell">
+          <p className="eyebrow eyebrow--cyan">{e46.unit.eyebrow}</p>
+          <h2 className="section__title display">{e46.unit.title}</h2>
+          <p className="lede unit__lead">{e46.unit.lead}</p>
+          <E46UnitConfigurator locale={locale} content={e46.unit} pricing={e46UnitPricing} />
+          <p className="unit__gpl">
+            {e46.unit.gpl}{" "}
+            <a href={ms43xSourceUrl} rel="noreferrer noopener" target="_blank">
+              {e46.unit.gplLink}
+            </a>
+          </p>
         </div>
       </section>
 
