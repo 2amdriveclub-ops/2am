@@ -136,6 +136,10 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 - **Přepínač jazyka CZ/EN v hlavičce** (Radek, 3. 10.). Mění dřívější
   „jazyk jen podle domény“: doména určuje výchozí jazyk, ruční volba se
   uloží do cookie `lang` a má přednost.
+- **Klub je zdarma, bez výjimky** (Radek, 5. 10.). Za členství se neplatí
+  vůbec, ani přes Torqly. Torqly je ke stažení zdarma, platí se v ní až za
+  víc aut v garáži a další služby. Web dřív tvrdil, že „členství běží přes
+  placené hladiny klubové sekce“ — opraveno v FAQ.
 - **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 10 pravidel
   v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
   cizí život, nula alkoholu (řidič i spolujezdec), nejvýš jeden spolujezdec,

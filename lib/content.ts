@@ -120,7 +120,7 @@ export const content = {
       },
       {
         q: "Co to stojí?",
-        a: "Vstup do klubu nic. Členství běží přes aplikaci Torqly, kde má klubová sekce placené hladiny podle toho, kolik aut a jízd evidujete.",
+        a: "Nic. Klub je zdarma a zůstane zdarma. Běží v aplikaci Torqly, kterou si taky stáhneš zdarma — platí se v ní až za víc aut v garáži a další služby navíc. Na členství v klubu to vliv nemá.",
       },
       {
         q: "Musím mít Torqly?",
@@ -333,7 +333,7 @@ export const content = {
       },
       {
         q: "What does it cost?",
-        a: "Joining the club: nothing. Membership runs through the Torqly app, which has paid tiers depending on how many cars and rides you're tracking.",
+        a: "Nothing. The club is free and stays free. It runs on the Torqly app, which is also free to download — you only pay there for more cars in your garage and extra services. None of that affects your club membership.",
       },
       {
         q: "Do I need Torqly?",
