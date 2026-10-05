@@ -144,6 +144,12 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   diagnostiky v appce** (Radek, 5. 10.). Jarvis navrhl netočit čekáním:
   základní díly (diagnostika, tuning, jednotka) natočit hned do zásoby
   a AI vydat jako samostatné druhé video.
+- **AI diagnostika v E46 Garage jede přes přihlášení do Torqly, nebo přes
+  vlastní API klíč uživatele** (Radek, 5. 10.). Torqly používá Claude,
+  data a kontext jsou v Supabase. Důsledek: AI v E46 Garage je trychtýř
+  do Torqly (appka zdarma → AI chce Torqly účet). Jarvis: klíč Torqly
+  nikdy v desktopové appce, volání jen přes server (Edge Function)
+  s kvótou na účet.
 - **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 10 pravidel
   v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
   cizí život, nula alkoholu (řidič i spolujezdec), nejvýš jeden spolujezdec,
@@ -171,6 +177,7 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | E46 jednotka: cena koupě bez výměny (návrh Jarvise 6 490 Kč = cena + záloha, protože se nevrátí jádro na další kus) a lhůta na vrácení původní jednotky. Do té doby web píše „potvrdíme e-mailem“. | Radek |
 | E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
 | Obsah na sociálních sítích: které formáty z brainstormu 5. 10. (ranní drop, Hero Car portrét, podcast „Volnoběh“, Ticho, E46 dílna, Za objektivem, Přihlášky) a jestli podcast. Natáčení na opuštěné pumpě Orlen jen se svolením majitele a bez prozrazení místa. | všichni tři, návrh termínu 9. 10. |
+| E46 AI: kvóta rozborů pro Torqly účet zdarma vs. placený, a jestli VIN a logy z auta posílané do Torqly/Anthropic potřebují souhlas v appce (VIN může být osobní údaj — ověřit). | Radek |
 | Kodex: kdo o porušení rozhoduje (organizátor jízdy na místě? všichni tři?) a jestli je nějaké odvolání. Bez toho je „blacklist“ jen věta a první spor se povede podle nálady. | všichni tři |
 | Kodex: kde se blacklist eviduje — návrh: tabulka v Supabase podle e-mailu/telefonu + kontrola u přihlášky. | Radek |
 | E46 jednotka: obchodní podmínky, reklamace a záruka. Upravená jednotka je asi zboží „podle přání spotřebitele“, kde se nedá odstoupit do 14 dnů — ověřit. | Radek |
