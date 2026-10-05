@@ -18,6 +18,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </Link>
         <nav className="masthead__nav" aria-label={locale === "cs" ? "Hlavní" : "Main"}>
           <a href="/#klub">{c.nav.club}</a>
+          <a href="/#kodex">{c.nav.code}</a>
           <Link href="/jizdy">{c.nav.rides}</Link>
           <Link href="/e46-garage">{c.nav.e46}</Link>
           <a href="/#faq">{c.nav.faq}</a>

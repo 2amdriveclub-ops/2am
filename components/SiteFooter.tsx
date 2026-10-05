@@ -18,6 +18,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <Link href="/prihlaska">{c.footer.apply}</Link>
             <Link href="/jizdy">{c.footer.rides}</Link>
             <a href="/#klub">{c.footer.whatMembership}</a>
+            <a href="/#kodex">{c.footer.code}</a>
             <a href="/#faq">{c.footer.faq}</a>
           </div>
           <div>

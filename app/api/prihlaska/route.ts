@@ -13,6 +13,7 @@ type Messages = {
   email: string;
   car: string;
   motivation: string;
+  codeAck: string;
   notConfigured: string;
   duplicate: string;
   serverError: string;
@@ -25,6 +26,7 @@ const messages: Record<"cs" | "en", Messages> = {
     email: "Tenhle e-mail nevypadá platně.",
     car: "Napiš, čím jezdíš.",
     motivation: "Pár vět stačí, ale něco tam být musí.",
+    codeAck: "Bez souhlasu s kodexem to nepůjde.",
     notConfigured:
       "Příjem přihlášek zatím není napojený. Napiš nám prosím na e-mail, ozveme se stejně.",
     duplicate: "Přihlášku z tohohle e-mailu už máme. Ozveme se.",
@@ -36,6 +38,7 @@ const messages: Record<"cs" | "en", Messages> = {
     email: "That email doesn't look valid.",
     car: "Tell us what you drive.",
     motivation: "A couple of sentences is enough, but write something.",
+    codeAck: "You need to accept the code to apply.",
     notConfigured: "Applications aren't connected yet. Email us directly and we'll still get back to you.",
     duplicate: "We already have an application from this email. We'll be in touch.",
     serverError: "Something broke on our end. Please try again.",
@@ -62,6 +65,9 @@ function validate(body: Payload, m: Messages) {
   if (!EMAIL.test(data.email)) errors.email = m.email;
   if (data.car.length < 2) errors.car = m.car;
   if (data.motivation.length < 10) errors.motivation = m.motivation;
+  // Souhlas s kodexem je podmínka přihlášky — při blacklistu se na něj odvoláváme.
+  const codeAck = body.code_ack === "on" || body.code_ack === true;
+  if (!codeAck) errors.code_ack = m.codeAck;
 
   return { data, errors };
 }
@@ -95,7 +101,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: m.notConfigured }, { status: 503 });
   }
 
-  const { error } = await supabase.from("applications").insert(data);
+  const { error } = await supabase
+    .from("applications")
+    .insert({ ...data, code_accepted_at: new Date().toISOString() });
 
   if (error) {
     // 23505 = unique violation, tzn. tenhle e-mail už přihlášku poslal.

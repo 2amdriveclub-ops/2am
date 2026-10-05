@@ -136,6 +136,16 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 - **Přepínač jazyka CZ/EN v hlavičce** (Radek, 3. 10.). Mění dřívější
   „jazyk jen podle domény“: doména určuje výchozí jazyk, ruční volba se
   uloží do cookie `lang` a má přednost.
+- **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 12 pravidel
+  v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
+  cizí život, nezávodí se, nula alkoholu (řidič i spolujezdec), nejvýš jeden
+  spolujezdec, respekt k policii, ke spícímu městu, nenecháme bordel, respekt
+  k cestě i ke stroji, telefon za jízdy v ruce ne, sraz se nesdílí, jede jen
+  pozvaný. Body 03, 10, 11 a 12 doplnil Jarvis, Radek je dal na web.
+  Kodex je **pravidlo chování**, ne zakladatelské hodnoty ze sekce 7 — ty
+  zůstávají interní. Přihláška bez zaškrtnutého souhlasu s kodexem
+  neodejde, čas souhlasu se ukládá (`code_accepted_at`, migrace 0003).
+  Text o osobních údajích říká, že blacklist si nechává jméno a e-mail.
 
 ## OTEVŘENO
 
@@ -151,6 +161,8 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
 | E46 jednotka: cena koupě bez výměny (návrh Jarvise 6 490 Kč = cena + záloha, protože se nevrátí jádro na další kus) a lhůta na vrácení původní jednotky. Do té doby web píše „potvrdíme e-mailem“. | Radek |
 | E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
+| Kodex: kdo o porušení rozhoduje (organizátor jízdy na místě? všichni tři?) a jestli je nějaké odvolání. Bez toho je „blacklist“ jen věta a první spor se povede podle nálady. | všichni tři |
+| Kodex: kde se blacklist eviduje — návrh: tabulka v Supabase podle e-mailu/telefonu + kontrola u přihlášky. | Radek |
 | E46 jednotka: obchodní podmínky, reklamace a záruka. Upravená jednotka je asi zboží „podle přání spotřebitele“, kde se nedá odstoupit do 14 dnů — ověřit. | Radek |
 
 ## ZAMÍTNUTO A PROČ
@@ -172,5 +184,5 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | 3 | Sjednotit pozicování Torqly (web vs App Store) | Radek | — |
 | 4 | Dodat 6–10 fotek z jízd do galerie | Bohuslav / Adam | — |
 | 5 | Vypsat termín první jízdy | tým | — |
-| 6 | Založit Supabase projekt a pustit migrace (0001 přihlášky, 0002 poptávky jednotek) — bez toho formuláře jen odkážou na e-mail | Jarvis (na pokyn) | — |
+| 6 | Založit Supabase projekt a pustit migrace (0001 přihlášky, 0002 poptávky jednotek, 0003 souhlas s kodexem) — bez toho formuláře jen odkážou na e-mail | Jarvis (na pokyn) | — |
 | 7 | Doplnit cenu koupě a lhůtu vrácení v `lib/e46.ts` → `e46UnitPricing` | Radek | — |

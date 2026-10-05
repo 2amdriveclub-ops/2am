@@ -106,6 +106,30 @@ export function ApplicationForm({ locale, content: t }: { locale: Locale; conten
         )}
       </p>
 
+      <p className="field">
+        <label className="form__ack">
+          <input
+            type="checkbox"
+            name="code_ack"
+            required
+            aria-invalid={Boolean(errors.code_ack)}
+            aria-describedby={errors.code_ack ? "code_ack-err" : undefined}
+          />
+          <span>
+            {t.fields.code.before}{" "}
+            <a href="/#kodex" target="_blank" rel="noopener">
+              {t.fields.code.link}
+            </a>{" "}
+            {t.fields.code.after}
+          </span>
+        </label>
+        {errors.code_ack && (
+          <span className="field__err" id="code_ack-err">
+            {errors.code_ack}
+          </span>
+        )}
+      </p>
+
       {/* Honeypot na roboty — skrytý před lidmi i před čtečkami. */}
       <p className="hp" aria-hidden="true">
         <label htmlFor="website">Web</label>

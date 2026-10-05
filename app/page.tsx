@@ -72,6 +72,28 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* --- kodex ----------------------------------------------------- */}
+      <section className="section" id="kodex">
+        <div className="shell">
+          <p className="eyebrow">{c.kodex.eyebrow}</p>
+          <h2 className="section__title display">{c.kodex.title}</h2>
+          <p className="lede kodex__lede">{c.kodex.lede}</p>
+          <ol className="kodex">
+            {c.kodex.rules.map((r) => (
+              <li key={r.index} className="kodex__rule">
+                <span className="kodex__index display">{r.index}</span>
+                <h3 className="kodex__title display">{r.title}</h3>
+                <p className="kodex__body">{r.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="kodex__penalty">
+            <p className="kodex__penalty-title display">{c.kodex.penalty.title}</p>
+            <p>{c.kodex.penalty.body}</p>
+          </div>
+        </div>
+      </section>
+
       {/* --- pilíře ----------------------------------------------------- */}
       <section className="section" id="klub">
         <div className="shell">
