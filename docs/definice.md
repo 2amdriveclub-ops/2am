@@ -202,7 +202,7 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 
 | # | Úkol | Kdo | Termín |
 |---|---|---|---|
-| 1 | Zveřejnit GitHub repo E46 Garage a dodat odkaz (GitHub + Releases) + Buy Me a Coffee | Radek | do spuštění webu |
+| 1 | Zveřejnit GitHub repo E46 Garage a dodat odkaz (GitHub + Releases) + Buy Me a Coffee. **Ne přepnutím `e46-app` na public** — ten obsahuje zálohu se soubory `ms4x-a-biny`, `garage.db` a daty aut. Veřejné repo založit nové a pushnout do něj čistou historii z bundlu (59 commitů, bez binárek a dat, ověřeno 5. 10.). | Radek (Jarvis připraví) | do spuštění webu |
 | 2 | Dodat přesný název `.com` domény a potvrdit `.cz`, napojit na Vercel | Radek | — |
 | 3 | Sjednotit pozicování Torqly (web vs App Store) | Radek | — |
 | 4 | Dodat 6–10 fotek z jízd do galerie | Bohuslav / Adam | — |
