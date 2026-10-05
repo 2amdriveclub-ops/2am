@@ -136,12 +136,13 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 - **Přepínač jazyka CZ/EN v hlavičce** (Radek, 3. 10.). Mění dřívější
   „jazyk jen podle domény“: doména určuje výchozí jazyk, ruční volba se
   uloží do cookie `lang` a má přednost.
-- **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 12 pravidel
+- **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 10 pravidel
   v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
-  cizí život, nezávodí se, nula alkoholu (řidič i spolujezdec), nejvýš jeden
-  spolujezdec, respekt k policii, ke spícímu městu, nenecháme bordel, respekt
-  k cestě i ke stroji, telefon za jízdy v ruce ne, sraz se nesdílí, jede jen
-  pozvaný. Body 03, 10, 11 a 12 doplnil Jarvis, Radek je dal na web.
+  cizí život, nula alkoholu (řidič i spolujezdec), nejvýš jeden spolujezdec,
+  respekt k policii, ke spícímu městu, nenecháme bordel, telefon za jízdy
+  v ruce ne, sraz se nesdílí, jede jen pozvaný. Body 08–10 doplnil Jarvis.
+  Radek vyškrtl „Na silnici se nezávodí“ a „Respekt k cestě i ke stroji“
+  (5. 10.) — Jarvis byl proti škrtu zákazu závodění, viz ZAMÍTNUTO.
   Kodex je **pravidlo chování**, ne zakladatelské hodnoty ze sekce 7 — ty
   zůstávají interní. Přihláška bez zaškrtnutého souhlasu s kodexem
   neodejde, čas souhlasu se ukládá (`code_accepted_at`, migrace 0003).
@@ -174,6 +175,12 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   jedné z nich.
 - **Pozicování Torqly jako AI diagnostiky** — v kategorii už sedí TorqueBot,
   OBDAI a TorqueIQ. "Domov pro celý život auta" je obhajitelnější.
+
+- **„Na silnici se nezávodí“ a „Respekt k cestě i ke stroji“ v kodexu**
+  (Radek, 5. 10.) — vyškrtnuto. Jarvis upozornil, že bez výslovného zákazu
+  závodění stojí tvrzení „nejsou to ilegální závody“ jen v FAQ; pokud se to
+  bude někdy řešit s policií, pojišťovnou nebo partnerem, je to slabší pozice.
+  STK a povinné ručení teď v kodexu nejsou, zůstává jen „pojištěná auta“ v FAQ.
 
 ## ÚKOLY
 

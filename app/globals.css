@@ -379,10 +379,15 @@ img { max-width: 100%; display: block; }
   margin: 0 0 1px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
+}
+
+/* Sudý počet bodů → dva sloupce, ať v posledním řádku nezůstane díra. */
+@media (min-width: 720px) {
+  .kodex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .kodex__rule {
