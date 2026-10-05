@@ -166,6 +166,7 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
 | E46 jednotka: cena koupě bez výměny (návrh Jarvise 6 490 Kč = cena + záloha, protože se nevrátí jádro na další kus) a lhůta na vrácení původní jednotky. Do té doby web píše „potvrdíme e-mailem“. | Radek |
 | E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
+| Obsah na sociálních sítích: které formáty z brainstormu 5. 10. (ranní drop, Hero Car portrét, podcast „Volnoběh“, Ticho, E46 dílna, Za objektivem, Přihlášky) a jestli podcast. Natáčení na opuštěné pumpě Orlen jen se svolením majitele a bez prozrazení místa. | všichni tři, návrh termínu 9. 10. |
 | Kodex: kdo o porušení rozhoduje (organizátor jízdy na místě? všichni tři?) a jestli je nějaké odvolání. Bez toho je „blacklist“ jen věta a první spor se povede podle nálady. | všichni tři |
 | Kodex: kde se blacklist eviduje — návrh: tabulka v Supabase podle e-mailu/telefonu + kontrola u přihlášky. | Radek |
 | E46 jednotka: obchodní podmínky, reklamace a záruka. Upravená jednotka je asi zboží „podle přání spotřebitele“, kde se nedá odstoupit do 14 dnů — ověřit. | Radek |
