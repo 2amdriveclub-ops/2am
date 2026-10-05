@@ -140,6 +140,10 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   vůbec, ani přes Torqly. Torqly je ke stažení zdarma, platí se v ní až za
   víc aut v garáži a další služby. Web dřív tvrdil, že „členství běží přes
   placené hladiny klubové sekce“ — opraveno v FAQ.
+- **První video = E46 Garage demo (varianta A), ale až po dokončení AI
+  diagnostiky v appce** (Radek, 5. 10.). Jarvis navrhl netočit čekáním:
+  základní díly (diagnostika, tuning, jednotka) natočit hned do zásoby
+  a AI vydat jako samostatné druhé video.
 - **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 10 pravidel
   v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
   cizí život, nula alkoholu (řidič i spolujezdec), nejvýš jeden spolujezdec,
