@@ -444,15 +444,15 @@ export const content = {
  * Po každé jízdě dopiš další termín v OBOU jazycích, nebo nastav `null` —
  * pak sekce na obou verzích webu sama zmizí (žádné "termín TBD").
  *
- * Konkrétní obec (Kralovice) je jen orientační poznámka pro tým v docs/,
+ * Konkrétní obec (Jesenice u Rakovníka) je jen orientační poznámka pro tým v docs/,
  * na web nepatří — kraj je maximum, co se zveřejňuje předem.
  */
 export const nextRide: Record<
   Locale,
   { dateLabel: string; timeLabel: string; region: string }
 > | null = {
-  cs: { dateLabel: "31. října 2026", timeLabel: "01:00", region: "Plzeňský kraj" },
-  en: { dateLabel: "October 31, 2026", timeLabel: "01:00", region: "Pilsen Region" },
+  cs: { dateLabel: "25. října 2026", timeLabel: "01:00", region: "Středočeský kraj" },
+  en: { dateLabel: "October 25, 2026", timeLabel: "01:00", region: "Central Bohemian Region" },
 };
 
 export function getContent(locale: Locale): Content {
