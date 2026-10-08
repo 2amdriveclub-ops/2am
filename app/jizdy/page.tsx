@@ -34,11 +34,17 @@ export default async function JizdyPage() {
         <section className="section section--flush">
           <div className="shell">
             <div className="ride-card">
-              <p className="eyebrow">{c.rides.card.eyebrow}</p>
+              <p className="eyebrow">{ride.name ?? c.rides.card.eyebrow}</p>
               <p className="ride-card__date display">
                 {ride.dateLabel} · {ride.timeLabel}
               </p>
               <p className="ride-card__region">{ride.region}</p>
+              {ride.story?.map((para) => (
+                <p className="ride-card__story" key={para}>
+                  {para}
+                </p>
+              ))}
+              {ride.access && <p className="ride-card__access">{ride.access}</p>}
               <p className="ride-card__note">{c.rides.card.note}</p>
               <div className="ride-card__actions">
                 <Link href="/prihlaska" className="btn">

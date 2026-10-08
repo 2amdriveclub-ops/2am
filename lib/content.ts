@@ -449,10 +449,38 @@ export const content = {
  */
 export const nextRide: Record<
   Locale,
-  { dateLabel: string; timeLabel: string; region: string }
+  {
+    dateLabel: string;
+    timeLabel: string;
+    region: string;
+    /** Volitelné: jméno jízdy, krátký příběh a poznámka, kdo se dostane dovnitř. */
+    name?: string;
+    story?: string[];
+    access?: string;
+  }
 > | null = {
-  cs: { dateLabel: "25. října 2026", timeLabel: "01:00", region: "Středočeský kraj" },
-  en: { dateLabel: "October 25, 2026", timeLabel: "01:00", region: "Central Bohemian Region" },
+  cs: {
+    dateLabel: "25. října 2026",
+    timeLabel: "01:00",
+    region: "Středočeský kraj",
+    name: "Jízda 00 · Hodina navíc",
+    story: [
+      "Ve tři ráno se hodiny vrátí na dvě. Jednou za rok, na jednu noc. Celá země tu hodinu prospí — my ji projedeme.",
+      "Je to první jízda klubu. Začátek se zopakovat nedá, takže kdo pojede teď, bude u toho napořád jako první.",
+    ],
+    access: "Místa na první jízdu rozdáváme osobně. Přihláška tě dostane do klubu — a na tu další.",
+  },
+  en: {
+    dateLabel: "October 25, 2026",
+    timeLabel: "01:00",
+    region: "Central Bohemian Region",
+    name: "Ride 00 · The extra hour",
+    story: [
+      "At three in the morning the clocks go back to two. Once a year, for one night. The whole country sleeps through that hour — we drive it.",
+      "It's the club's first ride. A start only happens once, so whoever rides now is in it as the first, for good.",
+    ],
+    access: "Spots on the first ride are handed out in person. Applying gets you into the club — and onto the next one.",
+  },
 };
 
 export function getContent(locale: Locale): Content {

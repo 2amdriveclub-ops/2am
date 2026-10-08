@@ -153,6 +153,9 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   do Torqly (appka zdarma → AI chce Torqly účet). Jarvis: klíč Torqly
   nikdy v desktopové appce, volání jen přes server (Edge Function)
   s kvótou na účet.
+- **Jízda 00 · Hodina navíc** (Radek, 8. 10.). První jízda má na webu
+  vlastní jméno a příběh (noc změny času). Místa na ni rozdává Radek
+  osobně; web to říká otevřeně a přihláška vede na další jízdu.
 - **Kodex klubu na webu, porušení = blacklist** (Radek, 5. 10.). 10 pravidel
   v sekci `#kodex` na hlavní stránce: není to sraz u Tesca, nikdy neohrozit
   cizí život, nula alkoholu (řidič i spolujezdec), nejvýš jeden spolujezdec,
@@ -181,6 +184,8 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
 | Obsah na sociálních sítích: které formáty z brainstormu 5. 10. (ranní drop, Hero Car portrét, podcast „Volnoběh“, Ticho, E46 dílna, Za objektivem, Přihlášky) a jestli podcast. Natáčení na opuštěné pumpě Orlen jen se svolením majitele a bez prozrazení místa. | všichni tři, návrh termínu 9. 10. |
 | E46 AI: kvóta rozborů pro Torqly účet zdarma vs. placený, a jestli VIN a logy z auta posílané do Torqly/Anthropic potřebují souhlas v appce (VIN může být osobní údaj — ověřit). | Radek |
+| **Torqly pro Android?** Bez toho se část posádky do klubu nedostane. Rozhoduje, jestli Torqly pro klub vůbec stačí. Analýza: `docs/torqly-pro-klub.md`. | Radek, do 9. 10. |
+| Jízda 00: sraz a cíl. Nonstop podniky v okolí Rakovníka jsem nenašel; kandidát na cíl je Hotel Jesenice (restaurace jinak do 22:00, nutná domluva na noc a bez alkoholu kvůli kodexu). | Radek |
 | Kodex: kdo o porušení rozhoduje (organizátor jízdy na místě? všichni tři?) a jestli je nějaké odvolání. Bez toho je „blacklist“ jen věta a první spor se povede podle nálady. | všichni tři |
 | Kodex: kde se blacklist eviduje — návrh: tabulka v Supabase podle e-mailu/telefonu + kontrola u přihlášky. | Radek |
 | E46 jednotka: obchodní podmínky, reklamace a záruka. Upravená jednotka je asi zboží „podle přání spotřebitele“, kde se nedá odstoupit do 14 dnů — ověřit. | Radek |

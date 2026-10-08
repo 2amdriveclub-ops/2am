@@ -48,7 +48,7 @@ export default async function HomePage() {
         <section className="section section--flush">
           <div className="shell">
             <Link href="/jizdy" className="ride-strip">
-              <span className="ride-strip__label">{c.rideStrip.label}</span>
+              <span className="ride-strip__label">{ride.name ?? c.rideStrip.label}</span>
               <span className="ride-strip__date display">
                 {ride.dateLabel} · {ride.timeLabel} · {ride.region}
               </span>
