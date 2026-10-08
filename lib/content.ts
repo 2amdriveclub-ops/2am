@@ -451,8 +451,8 @@ export const nextRide: Record<
   Locale,
   { dateLabel: string; timeLabel: string; region: string }
 > | null = {
-  cs: { dateLabel: "2. října 2026", timeLabel: "01:00", region: "Plzeňský kraj" },
-  en: { dateLabel: "October 2, 2026", timeLabel: "01:00", region: "Pilsen Region" },
+  cs: { dateLabel: "31. října 2026", timeLabel: "01:00", region: "Plzeňský kraj" },
+  en: { dateLabel: "October 31, 2026", timeLabel: "01:00", region: "Pilsen Region" },
 };
 
 export function getContent(locale: Locale): Content {

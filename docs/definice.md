@@ -119,8 +119,9 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
   je to mechanika, která dělá appku povinnou, aniž by to muselo být řečeno.
 - **Klub nesedí v jednom městě.** Kraj se mění jízdu od jízdy — web dřív
   tvrdil "Praha", což byl můj neověřený odhad, teď opraveno.
-- **První jízda: 2. 10. 2026, 01:00, Plzeňský kraj** (orientačně okolí
-  Kralovic — na web nejde, jen pro tým, viz výše).
+- **První jízda: 31. 10. 2026, 01:00 (noc z pátku na sobotu), Plzeňský kraj**
+  (orientačně okolí Kralovic — na web nejde, jen pro tým, viz výše).
+  Přesunuto z 2. 10. na konec října (Radek, 8. 10.).
 - **E46 Garage prodává hotové jednotky** (Radek, 3. 10. 2026). MS43
   s MS43X a předvolbami z modulu Tuning (omezovač, pedál Sport, volnoběh,
   DISA, VANOS, chlazení, tempomat). Mapy předstihu a paliva se neupravují.
@@ -173,7 +174,7 @@ Tohle všechno už umí Torqly a duplikovat to znamená postavit druhý produkt.
 | Jestli je Torqly společná firemní věc, nebo Radkova samostatná — a co na tom dělají Bohuslav a Adam. | všichni tři |
 | Doména: `.com` koupena (přesný název zatím nemám), `.cz` k potvrzení. Web už jazyk podle domény rozlišuje (`.cz` → čeština, jinak angličtina). | Radek |
 | Hero Car sloty: cena a počet aut na jízdu (na webu zatím bez konkrétní ceny — "piš na e-mail"). | Radek |
-| Partner na cíli jízdy (streetfood/shisha stánek) pro 2. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
+| Partner na cíli jízdy (streetfood/shisha stánek) pro 31. 10. — potvrdit, nebo tuhle jízdu nechat bez cíle. | Radek |
 | E46 jednotka: cena koupě bez výměny (návrh Jarvise 6 490 Kč = cena + záloha, protože se nevrátí jádro na další kus) a lhůta na vrácení původní jednotky. Do té doby web píše „potvrdíme e-mailem“. | Radek |
 | E46 jednotka: kolik kusů MS43 je skladem pro „pošleme hned“, kolik minut trvá flash + test na kus, kdo balí a posílá. Bez skladu výměna „hned“ nefunguje. | Radek |
 | Obsah na sociálních sítích: které formáty z brainstormu 5. 10. (ranní drop, Hero Car portrét, podcast „Volnoběh“, Ticho, E46 dílna, Za objektivem, Přihlášky) a jestli podcast. Natáčení na opuštěné pumpě Orlen jen se svolením majitele a bez prozrazení místa. | všichni tři, návrh termínu 9. 10. |
